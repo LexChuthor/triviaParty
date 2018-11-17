@@ -97,3 +97,13 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+var queryURL = "https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=boolean";
+
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+  console.log(JSON.stringify(response));
+});
