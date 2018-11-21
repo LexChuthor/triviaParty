@@ -1,7 +1,6 @@
 body{
     text-align: center;
     background-image: url("../images/background4.jpg");
-    background-size: 100%;
     background-attachment: scroll;
     background-repeat: no-repeat;
     height: 100vh;
@@ -25,7 +24,7 @@ h1 {
   } 
 
 #players {
-    margin-top: 5rem;
+    margin-top: 3rem;
     color: grey;
 }
 

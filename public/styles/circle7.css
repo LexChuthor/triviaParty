@@ -80,15 +80,21 @@
 }
 
 .ch-img-1 { 
-	background-image: url(../images/novice.png);
+	background-image: url(../images/art.jpeg);
+	background-size: 140%;
 }
 
 .ch-img-2 { 
-	background-image: url(../images/intermediate.png);
+	background-image: url(../images/geography.png);
+	background-size: 160%;
 }
 
 .ch-img-3 { 
-	background-image: url(../images/advanced.png);
+	background-image: url(../images/);
+}
+
+.ch-img-4 {
+	background-image: url()
 }
 
 .ch-info h3 {
