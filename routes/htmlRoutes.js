@@ -5,7 +5,8 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Question.findAll({}).then(function(dbQuestions) {
       res.render("index", {
-        msg: "Welcome!",
+
+        msg: "Trivia Party!",
         examples: dbQuestions
       });
     });

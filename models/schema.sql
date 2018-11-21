@@ -20,9 +20,9 @@ CREATE TABLE questions(
 INSERT INTO tqps27hovjvizqxp.questions (question, answer1, answer2, answer3, answer4, correctAnswer)
 VALUES ("What city did Rome fight in the Punic Wars?", "Troy", "Carthage", "Sparta", "Athens", "Carthage");
 
-Hostname - gtizpe105piw2gfq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
-Username - l4orju6yq2i7eloh
-Password - i6rcetpaukv357mh 
-Port - 3306
-Database - tqps27hovjvizqxp
+-- Hostname - gtizpe105piw2gfq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+-- Username - l4orju6yq2i7eloh
+-- Password - i6rcetpaukv357mh 
+-- Port - 3306
+-- Database - tqps27hovjvizqxp
 
