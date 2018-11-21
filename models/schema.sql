@@ -1,8 +1,8 @@
 DROP DATABASE IF EXISTS triviadb;
 CREATE DATABASE triviadb;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+DROP DATABASE IF EXISTS triviadb;
+CREATE DATABASE triviadb;
 
 CREATE TABLE questions(
     id INT AUTO_INCREMENT NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE questions(
     PRIMARY KEY(id)
 );
 
-INSERT INTO tqps27hovjvizqxp.questions (question, answer1, answer2, answer3, answer4, correctAnswer)
-VALUES ("What city did Rome fight in the Punic Wars?", "Troy", "Carthage", "Sparta", "Athens", "Carthage");
+INSERT INTO triviadb.questions (text, answer1, answer2, answer3, answer4, correctAnswer, createdAt, updatedAt, CategoryId)
+VALUES ("What city did Rome fight in the Punic Wars?", "Troy", "Carthage", "Sparta", "Athens", "Carthage", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5);
 
 -- Hostname - gtizpe105piw2gfq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
 -- Username - l4orju6yq2i7eloh

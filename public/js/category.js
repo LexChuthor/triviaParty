@@ -10,5 +10,5 @@ $(".question").on("click", function () {
 });
 
 $(".category").on("click", function() {
-    
+
 });

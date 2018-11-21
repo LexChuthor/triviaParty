@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Question = sequelize.define("Question", {
     text: DataTypes.TEXT,
     answer1: DataTypes.STRING,
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Question.associate = function (models) {
+  Question.associate = function(models) {
     Question.belongsTo(models.Category, {
       onDelete: "CASCADE",
       foreignKey: {
