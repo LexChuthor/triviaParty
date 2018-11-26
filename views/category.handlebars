@@ -1,19 +1,28 @@
-{{!-- <div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
+ <h1>Trivia, It's a Party!</h1>
+        <div id="players">
+            <h2 class="Player1 d-inline">Player 1: <span id="score1"></span></h2>
+            <h2 class="player2 d-inline">Player 2: <span id="score2"></span></h2>
+            <h2 class="player3 d-inline">Player 3: <span id="score3"></span></h2>
         </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
+        <hr>
+        <br>
+        <section class="main">
+
+            <ul class="ch-grid">
+                {{#each questions}}
+                <li>
+                    <div class="ch-item">
+                        <div class="ch-info">
+                            <div class="ch-info-front ch-img-1"></div>
+                            <div class="ch-info-back">
+                                <br>
+                                <h3 data-id="{{id}}">Question {{questionNumber}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+
+
+        </section>
