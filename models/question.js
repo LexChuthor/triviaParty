@@ -6,7 +6,22 @@ module.exports = function(sequelize, DataTypes) {
     answer3: DataTypes.STRING,
     answer4: DataTypes.STRING,
     correctAnswer: DataTypes.STRING,
-    answered: DataTypes.BOOLEAN
+
+    difficulty: DataTypes.STRING,
+    answered: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   });
+
+  Question.associate = function(models) {
+    Question.belongsTo(models.Category, {
+      onDelete: "CASCADE",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Question;
 };

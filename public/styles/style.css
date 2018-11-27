@@ -7,7 +7,7 @@ body{
     height: 100%;
 }
 
-h1 {
+.display-4 {
     color: rgb(248, 225, 225);
     text-shadow: 0 0 20px rgb(148, 133, 133);
     font-size: 3rem;
@@ -65,6 +65,11 @@ h1 {
 	display: inline-block;
 	margin: 50px;
 }
+
+h1, h3, h4{
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
 
 
   
