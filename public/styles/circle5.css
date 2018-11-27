@@ -2,7 +2,7 @@
 	margin: 20px 0 0 0;
 	padding: 0;
 	list-style: none;
-	display: block;
+	/* display: block; */
 	text-align: center;
 	width: 100%;
 }
@@ -20,7 +20,7 @@
 .ch-grid li {
 	width: 220px;
 	height: 220px;
-	display: inline-block;
+	/* display: inline-block; */
 	margin: 50px;
 }
 
@@ -45,7 +45,7 @@
 .ch-info-wrap {
 	top: 20px;
 	left: 20px;
-	background: #f9f9f9 url(../images/bg.jpg);
+	background: #f9f9f9 url(../images/animal.jpg);
 	box-shadow: 
 		0 0 0 20px rgba(255,255,255,0.2), 
 		inset 0 0 3px rgba(115,114, 23, 0.8);
@@ -60,7 +60,6 @@
 	border-radius: 50%;
 	background-position: center center;
 	
-	-webkit-backface-visibility: hidden; /*Just for webkit to have a smooth font*/
 }
 
 .ch-info .ch-info-front {
@@ -74,7 +73,7 @@
 .ch-info .ch-info-back {
 	opacity: 0;
 
-	background: #223e87;
+	background: black;
 	pointer-events: none;
 	
 	-webkit-transform: scale(1.5);
@@ -91,53 +90,42 @@
 }
 
 .ch-img-1 { 
-	background-image: url(../images/13.jpg);
+	background-image: url(../images/animal.jpg);
+	background-size: 150%;
 }
 
 .ch-img-2 { 
-	background-image: url(../images/14.jpg);
+	background-image: url(../images/anime.jpg);
+	background-size: 150%;
 }
 
 .ch-img-3 { 
-	background-image: url(../images/15.jpg);
+	background-image: url(../images/art.jpeg);
+	background-size: 150%;
 }
 
 .ch-info h3 {
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 18px;
 	margin: 0 15px;
 	padding: 40px 0 0 0;
 	height: 80px;
 	font-family: 'Open Sans', Arial, sans-serif;
-	text-shadow: 
-		0 0 1px #fff, 
-		0 1px 2px rgba(0,0,0,0.3);
 }
 
-.ch-info p {
-	color: #fff;
-	padding: 10px 5px 0;
-	font-style: italic;
-	margin: 0 30px;
-	font-size: 12px;
-	border-top: 1px solid rgba(255,255,255,0.5);
-}
-
-.ch-info p a {
+.ch-info h3 a {
 	display: block;
 	color: #e7615e;
 	font-style: normal;
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: 9px;
 	letter-spacing: 1px;
 	padding-top: 4px;
 	font-family: 'Open Sans', Arial, sans-serif;
 }
 
-.ch-info p a:hover {
+.ch-info h3 a:hover {
 	color: #fff;
 }
 
