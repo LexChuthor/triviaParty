@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     answer3: DataTypes.STRING,
     answer4: DataTypes.STRING,
     correctAnswer: DataTypes.STRING,
+
     difficulty: DataTypes.STRING,
     answered: {
       type: DataTypes.BOOLEAN,
