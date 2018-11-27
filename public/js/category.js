@@ -1,6 +1,6 @@
-$(".question").on("click", function () {
-    $("#categoryPage").hide();
-    $("#questionPage").show();
+$(".question").on("click", function() {
+  $("#categoryPage").hide();
+  $("#questionPage").show();
 
 
 
@@ -9,6 +9,6 @@ $(".question").on("click", function () {
 
 });
 
-$(".category").on("click", function() {
-
+$(".category").on("click", function()
+{
 });
