@@ -1,28 +1,97 @@
- <h1>Trivia, It's a Party!</h1>
-        <div id="players">
-            <h2 class="Player1 d-inline">Player 1: <span id="score1"></span></h2>
-            <h2 class="player2 d-inline">Player 2: <span id="score2"></span></h2>
-            <h2 class="player3 d-inline">Player 3: <span id="score3"></span></h2>
-        </div>
-        <hr>
-        <br>
-        <section class="main">
+<h1>Trivia, It's a Party!</h1>
+<div id="players">
+    <h2 class="Player1 d-inline">Player 1:
+        <span id="score1"></span>
+    </h2>
+    <h2 class="player2 d-inline">Player 2:
+        <span id="score2"></span>
+    </h2>
+    <h2 class="player3 d-inline">Player 3:
+        <span id="score3"></span>
+    </h2>
+</div>
+<hr>
+<br>
+<section class="categoryPage">
 
-            <ul class="ch-grid">
-                {{#each questions}}
-                <li>
-                    <div class="ch-item">
-                        <div class="ch-info">
-                            <div class="ch-info-front ch-img-1"></div>
-                            <div class="ch-info-back">
-                                <br>
-                                <h3 data-id="{{id}}">Question {{questionNumber}}</h3>
-                            </div>
-                        </div>
+    <ul class="ch-grid5">
+        {{#each questions}}
+        <li>
+            <div class="ch-item5">
+                <div class="ch-info5">
+                    <div class="ch-info-front5 ch-img-1"></div>
+                    <div class="ch-info-back5 question">
+                        <br>
+                        <h3 data-id="{{id}}">Question {{questionNumber}}</h3>
                     </div>
-                </li>
-                {{/each}}
-            </ul>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
 
 
-        </section>
+</section>
+
+<section class="questionPage">
+    <div class="container">
+        <div class="row">
+            <p id="questionText"></p>
+        </div>
+        <br>
+        <form>
+            <div class="row choices">
+                <div class="col-md-6">
+                    <input type="radio" name="" value="">
+                    <span class="option1"></span>
+                    <br>
+                    <input type="radio" name="" value="">
+                    <span class="option3"></span>
+                </div>
+                <div class="col-md-6">
+                    <input type="radio" name="" value="">
+                    <span class="option2"></span>
+                    <br>
+                    <input type="radio" name="" value="">
+                    <span class="option4"></span>
+                </div>
+            </div>
+            <div class="row">
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+<div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please enter your name 😊</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="col-md-4 mb-3">
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" style="color:orange" value="" required>
+                    </div>
+
+                    <p style="color:orange">Click any icon to select your preference after entering your name.</p>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal" id="log-in">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

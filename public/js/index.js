@@ -1,11 +1,33 @@
-function showModal(){
+function showModal() {
   $("#signInModal").modal("show");
-  };
+};
 
-$(document).ready(function(){
+$(document).ready(function () {
   // Show After 6 Seconds
-  setTimeout(function(){ showModal(); }, 4000);
-  });
+  setTimeout(function () { showModal(); }, 4000);
+});
+
+$(".question").on("click", function () {
+  var qID = $(this).data("id");
+
+  $.get("/api/questions/" + id)
+    .then(
+      function (response) {
+        
+
+
+      });
+});
+
+
+
+
+
+
+
+
+
+
 
 // Get references to page elements
 var $exampleText = $("#example-text");
@@ -27,7 +49,7 @@ var API = {
   },
   getExamples: function () {
     return $.ajax({
-      url: "/",
+      url: "/api/question/",
       type: "GET"
     });
   },
