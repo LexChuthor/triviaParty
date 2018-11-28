@@ -12,17 +12,23 @@
 </div>
 <hr>
 <br>
-<section class="categoryPage">
+
+    <h3 class="currentCat">History</h3>
+            
+
+<br>
+<br>
+<section id="categoryPage">
 
     <ul class="ch-grid5">
         {{#each questions}}
         <li>
             <div class="ch-item5">
                 <div class="ch-info5">
-                    <div class="ch-info-front5 ch-img-1"></div>
-                    <div class="ch-info-back5 question">
+                    <div class="ch-info-front5 {{img}}"></div>
+                    <div class="ch-info-back5 question" data-id="{{id}}">
                         <br>
-                        <h3 data-id="{{id}}">Question {{questionNumber}}</h3>
+                        <h3>Question {{questionNumber}}</h3>
                     </div>
                 </div>
             </div>
@@ -33,7 +39,7 @@
 
 </section>
 
-<section class="questionPage">
+<section id="questionPage">
     <div class="container">
         <div class="row">
             <p id="questionText"></p>
@@ -42,20 +48,22 @@
         <form>
             <div class="row choices">
                 <div class="col-md-6">
-                    <input type="radio" name="" value="">
-                    <span class="option1"></span>
+                    <input class="option1" type="radio" name="choice1" value="">
+                    <span id="option1"></span>
                     <br>
-                    <input type="radio" name="" value="">
-                    <span class="option3"></span>
+                    <input class="option3" type="radio" name="choice3" value="">
+                    <span id="option3"></span>
                 </div>
                 <div class="col-md-6">
-                    <input type="radio" name="" value="">
-                    <span class="option2"></span>
+                    <input class="option2" type="radio" name="choice2" value="">
+                    <span id="option2"></span>
                     <br>
-                    <input type="radio" name="" value="">
-                    <span class="option4"></span>
+                    <input class="option4" type="radio" name="choice4" value="">
+                    <span id="option4"></span>
                 </div>
             </div>
+            <br>
+            <br>
             <div class="row">
                 <button class="submit" type="submit">Submit</button>
             </div>
@@ -96,4 +104,4 @@
     </div>
 </div>
 
-<script src="/js/category.js"></script>
+<script type="text/javascript" src="/js/category.js"></script>

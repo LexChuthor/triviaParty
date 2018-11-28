@@ -34,6 +34,9 @@ $("#log-in").on("click", function() {
   });
 });
 
+
+
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
