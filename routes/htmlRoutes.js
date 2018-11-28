@@ -1,6 +1,10 @@
 var db = require("../models");
 
+<<<<<<< HEAD
 module.exports = function(app) {
+=======
+module.exports = function (app) {
+>>>>>>> a2da3708b7f84cec843b31951004a983dd62d016
   // Load index page
   // app.get("/", function (req, res) {
   //   db.Question.findAll({}).then(function (dbQuestions) {
@@ -23,10 +27,12 @@ module.exports = function(app) {
         if (!randomNums.includes(randomNum)) {
           randomNums.push(randomNum);
           var random = dbCategories[randomNum];
-          randomCats.push({
-            id: random.dataValues.id,
-            category: random.dataValues.category_name
-          });
+          randomCats.push(
+            {
+              id: random.dataValues.id,
+              category: random.dataValues.category_name,
+              img: random.dataValues.image
+            });
         }
       }
       console.log(randomCats);
