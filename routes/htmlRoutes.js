@@ -12,8 +12,8 @@ module.exports = function (app) {
   //   });
   // });
 
-  app.get("/", function (req, res) {
-    db.Category.findAll({}).then(function (dbCategories) {
+  app.get("/", function(req, res) {
+    db.Category.findAll({}).then(function(dbCategories) {
       console.log(JSON.stringify(dbCategories, null, 2));
       var randomCats = [];
       var randomNums = [];
@@ -40,8 +40,7 @@ module.exports = function (app) {
       console.log(arrays);
 
       res.render("index", arrays);
-
-    })
+    });
   });
 
   app.get("/category/:id", function (req, res) {
@@ -49,7 +48,7 @@ module.exports = function (app) {
       where: {
         CategoryId: req.params.id
       }
-    }).then(function (dbQuestions) {
+    }).then(function(dbQuestions) {
       console.log(JSON.stringify(dbQuestions, null, 2));
 
       db.Category.findOne({
@@ -94,8 +93,8 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Question.findOne({ where: { id: req.params.id } }).then(function (
+  app.get("/example/:id", function(req, res) {
+    db.Question.findOne({ where: { id: req.params.id } }).then(function(
       dbQuestion
     ) {
       res.render("example", {
@@ -105,7 +104,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
