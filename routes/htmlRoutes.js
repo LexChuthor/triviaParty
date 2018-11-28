@@ -66,7 +66,7 @@ module.exports = function (app) {
         while (randomQs.length < 5) {
           randomNum = Math.floor((Math.random() * 5) + 1);
 
-          if (!randomNums.includes(randomNum)) {
+          if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
             randomNums.push(randomNum);
             var random = dbQuestions[randomNum];
             randomQs.push(

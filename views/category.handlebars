@@ -48,23 +48,23 @@
         <form>
             <div class="row choices">
                 <div class="col-md-6">
-                    <input class="option1" type="radio" name="choice1" value="">
+                    <input class="option1" type="radio" name="choices" value="">
                     <span id="option1"></span>
                     <br>
-                    <input class="option3" type="radio" name="choice3" value="">
+                    <input class="option3" type="radio" name="choices" value="">
                     <span id="option3"></span>
                 </div>
                 <div class="col-md-6">
-                    <input class="option2" type="radio" name="choice2" value="">
+                    <input class="option2" type="radio" name="choices" value="">
                     <span id="option2"></span>
                     <br>
-                    <input class="option4" type="radio" name="choice4" value="">
+                    <input class="option4" type="radio" name="choices" value="">
                     <span id="option4"></span>
                 </div>
             </div>
             <br>
             <br>
-            <div class="row">
+            <div class="row submitRow">
                 <button class="submit" type="submit">Submit</button>
             </div>
         </form>
@@ -80,25 +80,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Please enter your name 😊</h5>
+                <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span class="answerClose" aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" style="color:orange" value="" required>
-                    </div>
-
-                    <p style="color:orange">Click any icon to select your preference after entering your name.</p>
-
-
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal" id="log-in">Submit</button>
+                <p class="answerBody"></p>
             </div>
         </div>
     </div>

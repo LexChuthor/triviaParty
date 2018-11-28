@@ -17,10 +17,18 @@ module.exports = function(app) {
       }
     })
     .then(function(dbQuestion){
-      
       res.json(dbQuestion);
     });
+  });
 
+  app.put("/api/questions/:id", function(req, res) {
+    db.Question.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbQuestion) {
+      res.json(dbQuestion);
+    });
   });
 
   // Create a new example
@@ -55,3 +63,5 @@ module.exports = function(app) {
     });
   });
 };
+
+
