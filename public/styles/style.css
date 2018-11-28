@@ -53,6 +53,7 @@ h1, h3, h4{
 #questionPage p, #questionPage span{
   text-shadow: 2px 2px black;
   margin: 0 auto;
+  color:white;
 }
 
 .submit{
@@ -64,7 +65,10 @@ h1, h3, h4{
 }
 
 .currentCat{
-  
+  background-color: aqua;
+  width: 10%;
+  margin: 0 auto;
+  border-radius: 30px;
 }
 
 
