@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-image: url("../images/background4.jpg");
+    background-image: url("../images/background3.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -9,6 +9,7 @@ body{
 
 .display-4 {
     color: rgb(248, 225, 225);
+    text-shadow: 0 0 20px rgb(148, 133, 133);
     font-size: 3rem;
     font-family: 'Allerta Stencil', sans-serif;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -32,8 +33,37 @@ body{
   }
 
 #players {
-    margin-top: 5rem;
-    color: grey;
+    margin-top: 3rem;
+    color: rgb(24, 23, 23);
+    text-shadow: 0 0 20px rgb(148, 133, 133);
+    background: rgba(164, 198, 226, 0.2);
+
+}
+
+.ch-grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+    display: table;
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+	width: 220px;
+	height: 220px;
+	display: inline-block;
+	margin: 50px;
 }
 
 h1, h3, h4{

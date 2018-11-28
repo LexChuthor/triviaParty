@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "4and$SLSQL",
-    "database": "triviaDB",
+    "database": "triviadb",
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -1,44 +1,44 @@
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Art", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Art", "art", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Film", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Film", "film", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Television", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Television", "tv", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Food", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Food", "food", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("History", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("History", "history", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Animals", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Animals", "animal", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Plants", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Plants", "plants", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Weather", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Weather", "weather", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Technology", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Technology", "technology", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Music", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Music", "music", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Sports", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Sports", "sports", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Video Games", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Video Games", "videogames", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Books", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Books", "books", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Anime", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Anime", "anime", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO triviadb.categories (category_name, createdAt, updatedAt)
-VALUES ("Geography", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO triviadb.categories (category_name, image, createdAt, updatedAt)
+VALUES ("Geography", "geography", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
