@@ -1,6 +1,4 @@
 var db = require("../models");
-var path = require("path");
-
 
 module.exports = function (app) {
   // Load index page
@@ -28,7 +26,8 @@ module.exports = function (app) {
           randomCats.push(
             {
               id: random.dataValues.id,
-              category: random.dataValues.category_name
+              category: random.dataValues.category_name,
+              img: random.dataValues.image
             });
         }
       }
