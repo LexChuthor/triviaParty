@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "4and$SLSQL",
-=======
-    "password": "password",
->>>>>>> 5eeefff030c33f12920906d7d44663a4071b6f61
+    "password": "",
     "database": "triviadb",
     "host": "localhost",
     "dialect": "mysql"
