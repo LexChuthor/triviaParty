@@ -19,8 +19,26 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
-    db.Question.destroy({ where: { id: req.params.id } }).then(function(dbQuestion) {
+    db.Question.destroy({ where: { id: req.params.id } }).then(function(
+      dbQuestion
+    ) {
       res.json(dbQuestion);
+    });
+  });
+
+  app.post("/api/player", function(req, res) {
+    db.Player.create(req.body).then(function(player) {
+      res.json(player);
+    });
+  });
+
+  app.put("/api/player", function(req, res) {
+    db.Player.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(playerUp) {
+      res.json(playerUp);
     });
   });
 };
