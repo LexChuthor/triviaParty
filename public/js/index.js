@@ -4,30 +4,35 @@ function showModal() {
 
 $(document).ready(function () {
   // Show After 6 Seconds
-  setTimeout(function () { showModal(); }, 4000);
+  console.log(sessionStorage.getItem("player"));
+  if (sessionStorage.getItem("player") === null) {
+    setTimeout(function() { showModal(); }, 4000);
+  } else {
+    $(".Player1").text(sessionStorage.getItem("player"));
+    $("#score1").text(sessionStorage.getItem("score"));
+  }
 });
 
-$(".question").on("click", function () {
-  var qID = $(this).data("id");
+var difficulty;
 
-  $.get("/api/questions/" + id)
-    .then(
-      function (response) {
-        
-
-
-      });
+$(".ch-info-back").on("click", function(){
+  difficulty = $(this).children().data("id");
 });
-
-
-
-
-
-
-
-
-
-
+$("#log-in").on("click", function() {
+  event.preventDefault();
+  var playerName = $("#userName")
+    .val()
+    .trim();
+  $(".Player1").text(playerName);
+  sessionStorage.setItem("player", playerName);
+  playerName += "-" + difficulty;
+  sessionStorage.setItem("dbName", playerName);
+  $.post("/api/player", {
+    player_name: playerName
+  }).then(function() {
+    console.log("something happened");
+  });
+});
 
 // Get references to page elements
 var $exampleText = $("#example-text");

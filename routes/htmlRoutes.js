@@ -1,10 +1,6 @@
 var db = require("../models");
 
-<<<<<<< HEAD
-module.exports = function(app) {
-=======
 module.exports = function (app) {
->>>>>>> a2da3708b7f84cec843b31951004a983dd62d016
   // Load index page
   // app.get("/", function (req, res) {
   //   db.Question.findAll({}).then(function (dbQuestions) {
