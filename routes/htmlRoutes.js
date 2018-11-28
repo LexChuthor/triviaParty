@@ -17,7 +17,7 @@ module.exports = function (app) {
       console.log(JSON.stringify(dbCategories, null, 2));
       var randomCats = [];
       var randomNums = [];
-      while(randomCats.length < 9){
+      while (randomCats.length < 9) {
         randomNum = Math.floor((Math.random() * 14) + 1);
 
         if (!randomNums.includes(randomNum)) {
@@ -36,7 +36,7 @@ module.exports = function (app) {
       var array1 = [randomCats[0], randomCats[1], randomCats[2]];
       var array2 = [randomCats[3], randomCats[4], randomCats[5]];
       var array3 = [randomCats[6], randomCats[7], randomCats[8]];
-      var arrays = {topRow: array1, middleRow: array2, bottomRow: array3};
+      var arrays = { topRow: array1, middleRow: array2, bottomRow: array3 };
       console.log(arrays);
 
       res.render("index", arrays);
@@ -44,7 +44,7 @@ module.exports = function (app) {
     })
   });
 
-  app.get("/category/:id", function(req, res) {
+  app.get("/category/:id", function (req, res) {
     db.Question.findAll({
       where: {
         CategoryId: req.params.id
@@ -52,34 +52,45 @@ module.exports = function (app) {
     }).then(function (dbQuestions) {
       console.log(JSON.stringify(dbQuestions, null, 2));
 
-      var randomQs = [];
-      var randomNums = [];
-      var questionNum = 1;
-      while(randomQs.length < 5){
-        randomNum = Math.floor((Math.random() * 5) + 1);
-
-        if (!randomNums.includes(randomNum)) {
-          randomNums.push(randomNum);
-          var random = dbQuestions[randomNum];
-          randomQs.push(
-            {
-              id: random.id,
-              question: random.text,
-              answer1: random.answer1,
-              answer2: random.answer2,
-              answer3: random.answer3,
-              answer4: random.answer4,
-              correctAnswer: random.correctAnswer,
-              questionNumber: questionNum
-            });
-            questionNum++;
+      db.Category.findOne({
+        where: {
+          id: req.params.id
         }
-      }
-      console.log(randomQs);
-      res.render("category", {questions: randomQs});
+      }).then(function (dbCategory) {
+        console.log(JSON.stringify(dbCategory, null, 2));
+
+
+
+        var randomQs = [];
+        var randomNums = [];
+        var questionNum = 1;
+        while (randomQs.length < 5) {
+          randomNum = Math.floor((Math.random() * 5) + 1);
+
+          if (!randomNums.includes(randomNum)) {
+            randomNums.push(randomNum);
+            var random = dbQuestions[randomNum];
+            randomQs.push(
+              {
+                id: random.id,
+                question: random.text,
+                answer1: random.answer1,
+                answer2: random.answer2,
+                answer3: random.answer3,
+                answer4: random.answer4,
+                correctAnswer: random.correctAnswer,
+                questionNumber: questionNum,
+                img: dbCategory.image
+              });
+            questionNum++;
+          }
+        }
+        console.log(randomQs);
+        res.render("category", { questions: randomQs });
+      });
     });
-    
-   
+
+
   });
 
   // Load example page and pass in an example by id

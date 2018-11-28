@@ -7,17 +7,7 @@ $(document).ready(function () {
   setTimeout(function () { showModal(); }, 4000);
 });
 
-$(".question").on("click", function () {
-  var qID = $(this).data("id");
 
-  $.get("/api/questions/" + id)
-    .then(
-      function (response) {
-        
-
-
-      });
-});
 
 
 

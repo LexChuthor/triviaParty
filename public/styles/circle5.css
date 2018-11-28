@@ -1,5 +1,5 @@
 .ch-grid5 {
-	margin: 20px 0 0 0;
+	margin: 0 0 0 0;
 	padding: 0;
 	list-style: none;
 	display: block;
@@ -62,6 +62,7 @@ ch-info5-wrap,
 }
 
 .ch-info5 .ch-info-front5 {
+	background-size: 160%;
 	transition: all 0.6s ease-in-out;
 }
 
@@ -73,17 +74,67 @@ ch-info5-wrap,
 	transition: all 0.4s ease-in-out 0.2s;
 }
 
-.ch-img-1 { 
-	background-image: url(../images/novice.png);
+.art { 
+	background-image: url(../images/art.jpg);
 }
 
-.ch-img-2 { 
-	background-image: url(../images/novice.png);
+.film { 
+	background-image: url(../images/film.jpg);
 }
 
-.ch-img-3 { 
-	background-image: url(../images/novice.png);
+.tv { 
+	background-image: url(../images/tv.jpg);
 }
+
+.food { 
+	background-image: url(../images/food.jpg);
+}
+
+.history { 
+	background-image: url(../images/history.jpg);
+}
+
+.animal { 
+	background-image: url(../images/animal.jpg);
+}
+
+.plants { 
+	background-image: url(../images/plants.jpg);
+}
+
+.weather { 
+	background-image: url(../images/weather.jpg);
+}
+
+.technology { 
+	background-image: url(../images/technology.jpg);
+}
+
+.music { 
+	background-image: url(../images/music.jpg);
+}
+
+.sports { 
+	background-image: url(../images/sports.jpg);
+}
+
+.videogames { 
+	background-image: url(../images/videogames.jpg);
+}
+
+.books { 
+	background-image: url(../images/books.jpg);
+}
+
+.anime { 
+	background-image: url(../images/anime.jpg);
+}
+
+.geography { 
+	background-image: url(../images/geography.jpg);
+}
+
+
 
 .ch-info5 h3 {
 	color: #fff;
