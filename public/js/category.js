@@ -1,11 +1,8 @@
 $(document).ready(function () {
+
   console.log(sessionStorage.getItem("player"));
   $(".Player1").text(sessionStorage.getItem("player"));
   $("#score1").text(sessionStorage.getItem("score"));
-});
-
-$(".category").on("click", function () {
-
 });
 
 $(".question").on("click", function () {
@@ -32,14 +29,15 @@ $(".question").on("click", function () {
   });
 });
 
+
 $(document).on("click", ".submit", function (event) {
   event.preventDefault();
   var qID = $(this).data("id");
   console.log("qID: " + qID);
-  $("#answerModal").modal("show");
+  $('#answerModal').modal({backdrop: 'static', keyboard: false}); 
 
   $.get("/api/questions/" + qID, function (response) {
-    console.log("Value: " + $('input[name=choices]:checked').val());
+    console.log("Value: " + $("input[name=choices]:checked").val());
     console.log("Answer: " + response.correctAnswer);
     if ($("input[name=choices]:checked").val() === response.correctAnswer) {
       $(".answerTitle").text("Congratulations!");
@@ -47,7 +45,8 @@ $(document).on("click", ".submit", function (event) {
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
-    }
+    };
+    $("input[name=choices]:checked").prop('checked', false);
     $(".submitRow").empty();
     $(".submitRow").append("<button class='submit' type='submit'>Submit</button>");
   })
@@ -63,5 +62,7 @@ $(document).on("click", ".submit", function (event) {
   $(".answerClose").on("click", function () {
     $("#categoryPage").show();
     $("#questionPage").hide();
+    location.reload();
   });
+
 });
