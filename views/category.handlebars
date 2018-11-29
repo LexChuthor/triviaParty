@@ -1,92 +1,97 @@
-<h1>Trivia, It's a Party!</h1>
-<div id="players">
-    <h2 class="Player1 d-inline">Player 1:
-        <span id="score1"></span>
-    </h2>
-    {{!-- <h2 class="player2 d-inline">Player 2:
-        <span id="score2"></span>
-    </h2>
-    <h2 class="player3 d-inline">Player 3:
-        <span id="score3"></span>
-    </h2> --}}
-</div>
-<hr>
-<br>
+<div class="body {{background}}-background" >
+    <h1>Trivia, It's a Party!</h1>
+    <div id="players">
+        <h2 class="Player1 d-inline">Player 1:
+            <span id="score1"></span>
+        </h2>
+        {{!--
+        <h2 class="player2 d-inline">Player 2:
+            <span id="score2"></span>
+        </h2>
+        <h2 class="player3 d-inline">Player 3:
+            <span id="score3"></span>
+        </h2> 
+        style="background-image: url('./images/{{background}}-background.jpg')"
+        --}}
+    </div>
+    <hr>
+    <br>
 
-    <h3 class="currentCat">History</h3>
-            
+    <h3 class="currentCat">{{currentCat}}</h3>
 
-<br>
-<br>
-<section id="categoryPage">
 
-    <ul class="ch-grid5">
-        {{#each questions}}
-        <li>
-            <div class="ch-item5">
-                <div class="ch-info5">
-                    <div class="ch-info-front5 {{img}}"></div>
-                    <div class="ch-info-back5 question" data-id="{{id}}">
-                        <br>
-                        <h3>Question {{questionNumber}}</h3>
+    <br>
+    <br>
+    <section id="categoryPage">
+
+        <ul class="ch-grid5">
+            {{#each questions}}
+            <li>
+                <div class="ch-item5">
+                    <div class="ch-info5">
+                        <div class="ch-info-front5 {{img}}"></div>
+                        <div class="ch-info-back5 question" data-id="{{id}}">
+                            <br>
+                            <h3>Question {{questionNumber}}</h3>
+                        </div>
                     </div>
                 </div>
+            </li>
+            {{/each}}
+        </ul>
+
+
+    </section>
+
+    <section id="questionPage">
+        <div class="container">
+            <div class="row">
+                <p id="questionText"></p>
             </div>
-        </li>
-        {{/each}}
-    </ul>
+            <br>
+            <form>
+                <div class="row choices">
+                    <div class="col-md-6">
+                        <input class="option1" type="radio" name="choices" value="">
+                        <span id="option1"></span>
+                        <br>
+                        <input class="option3" type="radio" name="choices" value="">
+                        <span id="option3"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="option2" type="radio" name="choices" value="">
+                        <span id="option2"></span>
+                        <br>
+                        <input class="option4" type="radio" name="choices" value="">
+                        <span id="option4"></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row submitRow">
+                    <button class="submit" type="submit">Submit</button>
+                </div>
+            </form>
 
 
-</section>
-
-<section id="questionPage">
-    <div class="container">
-        <div class="row">
-            <p id="questionText"></p>
         </div>
-        <br>
-        <form>
-            <div class="row choices">
-                <div class="col-md-6">
-                    <input class="option1" type="radio" name="choices" value="">
-                    <span id="option1"></span>
-                    <br>
-                    <input class="option3" type="radio" name="choices" value="">
-                    <span id="option3"></span>
+
+
+
+    </section>
+
+    <div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="answerClose" aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="col-md-6">
-                    <input class="option2" type="radio" name="choices" value="">
-                    <span id="option2"></span>
-                    <br>
-                    <input class="option4" type="radio" name="choices" value="">
-                    <span id="option4"></span>
+                <div class="modal-body">
+                    <p class="answerBody"></p>
                 </div>
-            </div>
-            <br>
-            <br>
-            <div class="row submitRow">
-                <button class="submit" type="submit">Submit</button>
-            </div>
-        </form>
-
-
-    </div>
-
-
-
-</section>
-
-<div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="answerClose" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="answerBody"></p>
             </div>
         </div>
     </div>

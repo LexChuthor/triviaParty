@@ -12,8 +12,8 @@ module.exports = function (app) {
   //   });
   // });
 
-  app.get("/", function(req, res) {
-    db.Category.findAll({}).then(function(dbCategories) {
+  app.get("/", function (req, res) {
+    db.Category.findAll({}).then(function (dbCategories) {
       console.log(JSON.stringify(dbCategories, null, 2));
       var randomCats = [];
       var randomNums = [];
@@ -48,8 +48,14 @@ module.exports = function (app) {
       where: {
         CategoryId: req.params.id
       }
-    }).then(function(dbQuestions) {
+    }).then(function (dbQuestions) {
       console.log(JSON.stringify(dbQuestions, null, 2));
+      unansweredQuestions = [];
+      for(var i = 0; i < dbQuestions.length; i++){
+        if(!dbQuestions[i].answered){
+          unansweredQuestions.push(dbQuestions[i]);
+        }
+      };
 
       db.Category.findOne({
         where: {
@@ -58,34 +64,56 @@ module.exports = function (app) {
       }).then(function (dbCategory) {
         console.log(JSON.stringify(dbCategory, null, 2));
 
-
-
         var randomQs = [];
         var randomNums = [];
         var questionNum = 1;
-        while (randomQs.length < 5) {
-          randomNum = Math.floor((Math.random() * 5) + 1);
+        if (unansweredQuestions.length > 4) {
+          while (randomQs.length < 5) {
+            randomNum = Math.floor(Math.random() * 5);
 
-          if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
-            randomNums.push(randomNum);
-            var random = dbQuestions[randomNum];
-            randomQs.push(
-              {
-                id: random.id,
-                question: random.text,
-                answer1: random.answer1,
-                answer2: random.answer2,
-                answer3: random.answer3,
-                answer4: random.answer4,
-                correctAnswer: random.correctAnswer,
-                questionNumber: questionNum,
-                img: dbCategory.image
-              });
-            questionNum++;
+            if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
+              randomNums.push(randomNum);
+              var random = dbQuestions[randomNum];
+              randomQs.push(
+                {
+                  id: random.id,
+                  question: random.text,
+                  answer1: random.answer1,
+                  answer2: random.answer2,
+                  answer3: random.answer3,
+                  answer4: random.answer4,
+                  correctAnswer: random.correctAnswer,
+                  questionNumber: questionNum,
+                  img: dbCategory.image
+                });
+              questionNum++;
+            }
+          }
+        } else {
+          while (randomQs.length < unansweredQuestions.length) {
+            randomNum = Math.floor(Math.random() * dbQuestions.length);
+
+            if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
+              randomNums.push(randomNum);
+              var random = dbQuestions[randomNum];
+              randomQs.push(
+                {
+                  id: random.id,
+                  question: random.text,
+                  answer1: random.answer1,
+                  answer2: random.answer2,
+                  answer3: random.answer3,
+                  answer4: random.answer4,
+                  correctAnswer: random.correctAnswer,
+                  questionNumber: questionNum,
+                  img: dbCategory.image
+                });
+              questionNum++;
+            }
           }
         }
         console.log(randomQs);
-        res.render("category", { questions: randomQs });
+        res.render("category", { questions: randomQs, currentCat: [dbCategory.category_name], background: [dbCategory.image]});
       });
     });
 
@@ -93,8 +121,8 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Question.findOne({ where: { id: req.params.id } }).then(function(
+  app.get("/example/:id", function (req, res) {
+    db.Question.findOne({ where: { id: req.params.id } }).then(function (
       dbQuestion
     ) {
       res.render("example", {
@@ -104,7 +132,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
