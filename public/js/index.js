@@ -1,5 +1,5 @@
 function showModal() {
-  $("#signInModal").modal("show");
+  $('#signInModal').modal({backdrop: 'static', keyboard: false}); 
 };
 
 $(document).ready(function () {
@@ -25,10 +25,10 @@ $("#log-in").on("click", function() {
     .trim();
   $(".Player1").text(playerName);
   sessionStorage.setItem("player", playerName);
-  playerName += "-" + difficulty;
-  sessionStorage.setItem("dbName", playerName);
+  sessionStorage.setItem("difficulty", difficulty);
   $.post("/api/player", {
-    player_name: playerName
+    player_name: playerName,
+    difficulty: difficulty
   }).then(function() {
     console.log("something happened");
   });
