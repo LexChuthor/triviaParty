@@ -33,7 +33,7 @@ module.exports = function (app) {
             var randomCats = [];
             var randomNums = [];
             while (randomCats.length < 9) {
-              randomNum = Math.floor((Math.random() * 14) + 1);
+              var randomNum = Math.floor((Math.random() * 14) + 1);
 
               if (!randomNums.includes(randomNum)) {
                 randomNums.push(randomNum);
@@ -71,7 +71,7 @@ module.exports = function (app) {
       }
     }).then(function (dbQuestions) {
       console.log(JSON.stringify(dbQuestions, null, 2));
-      unansweredQuestions = [];
+      var unansweredQuestions = [];
       for (var i = 0; i < dbQuestions.length; i++) {
         if (!dbQuestions[i].answered) {
           unansweredQuestions.push(dbQuestions[i]);
