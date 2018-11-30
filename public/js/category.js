@@ -1,8 +1,13 @@
 $(document).ready(function () {
 
   console.log(sessionStorage.getItem("player"));
+  console.log(sessionStorage.getItem("difficulty"));
   $(".Player1").text(sessionStorage.getItem("player"));
-  $("#score1").text(sessionStorage.getItem("score"));
+  if (sessionStorage.getItem("score") === null) {
+    $("#score1").text(": 0");
+  } else {
+    $("#score1").text(": " +sessionStorage.getItem("score"));
+  }
 });
 
 $(".question").on("click", function () {
@@ -15,6 +20,7 @@ $(".question").on("click", function () {
   console.log("qID: " + qID);
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
+    console.log(response);
     console.log(response.text);
     $("#questionText").text(response.text);
     $(".option1").attr("value", response.answer1);
@@ -37,7 +43,7 @@ $(document).on("click", ".submit", function (event) {
   var qID = $(this).data("id");
   var difficulty = sessionStorage.getItem("difficulty");
   console.log("qID: " + qID);
-  $('#answerModal').modal({backdrop: 'static', keyboard: false}); 
+  $('#answerModal').modal({ backdrop: 'static', keyboard: false });
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
     console.log("Value: " + $("input[name=choices]:checked").val());
@@ -45,6 +51,12 @@ $(document).on("click", ".submit", function (event) {
     if ($("input[name=choices]:checked").val() === response.correctAnswer) {
       $(".answerTitle").text("Congratulations!");
       $(".answerBody").text(`${response.correctAnswer} was the correct answer!`);
+      var score = sessionStorage.getItem("score");
+      if (score === null) {
+        score = 0;
+      }
+      score += 5;
+      sessionStorage.setItem("score", score);
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);

@@ -9,7 +9,11 @@ $(document).ready(function () {
     setTimeout(function() { showModal(); }, 4000);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
-    $("#score1").text(sessionStorage.getItem("score"));
+    if (sessionStorage.getItem("score") === null) {
+      $("#score1").text(": 0");
+    } else {
+      $("#score1").text(":" + sessionStorage.getItem("score"));
+    }
   }
 });
 
