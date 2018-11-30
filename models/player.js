@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    difficulty: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     highScore: {
       type: DataTypes.INTEGER,
       defaultValue: 0

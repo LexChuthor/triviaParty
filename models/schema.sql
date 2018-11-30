@@ -23,6 +23,11 @@ VALUES ("Who was the first president born in the independent United States?", "A
 INSERT INTO triviadb.questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
 VALUES ("Which nation did NOT have a colony in the modern-day USA?", "Portugal", "Spain", "The Netherlands", "Sweden", "Portugal", "Medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5);
 
+INSERT INTO triviadb.questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Fallout Boy's song 'Uma Thurman' samples the theme song of what classic TV show?", "Gilligan's Island", "The Munsters", "The Addams Family", "The Brady Bunch", "The Munsters", "Medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 10);
+
+INSERT INTO triviadb.questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these albums was not released by the Beatles?", "Abbey Road", "Revolver", "Let It Bleed", "Help!", "Let It Bleed", "Easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 10);
 
 
 

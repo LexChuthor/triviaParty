@@ -13,46 +13,67 @@ module.exports = function (app) {
   // });
 
   app.get("/", function (req, res) {
-    db.Category.findAll({}).then(function (dbCategories) {
-      console.log(JSON.stringify(dbCategories, null, 2));
-      var randomCats = [];
-      var randomNums = [];
-      while (randomCats.length < 9) {
-        randomNum = Math.floor((Math.random() * 14) + 1);
 
-        if (!randomNums.includes(randomNum)) {
-          randomNums.push(randomNum);
-          var random = dbCategories[randomNum];
-          randomCats.push(
-            {
-              id: random.dataValues.id,
-              category: random.dataValues.category_name,
-              img: random.dataValues.image
-            });
+    var difficulty;
+    db.Player.max("id").then(function (currentPlayer) {
+      console.log(currentPlayer);
+      var currentPlayerID = currentPlayer;
+
+      db.Player.findOne({
+        where: {
+          id: currentPlayerID
         }
-      }
-      console.log(randomCats);
+      })
+        .then(function (dbPlayer) {
+          console.log(JSON.stringify(dbPlayer, null, 2));
+          difficulty = dbPlayer.difficulty
 
-      var array1 = [randomCats[0], randomCats[1], randomCats[2]];
-      var array2 = [randomCats[3], randomCats[4], randomCats[5]];
-      var array3 = [randomCats[6], randomCats[7], randomCats[8]];
-      var arrays = { topRow: array1, middleRow: array2, bottomRow: array3 };
-      console.log(arrays);
+          db.Category.findAll({}).then(function (dbCategories) {
+            console.log(JSON.stringify(dbCategories, null, 2));
+            var randomCats = [];
+            var randomNums = [];
+            while (randomCats.length < 9) {
+              randomNum = Math.floor((Math.random() * 14) + 1);
 
-      res.render("index", arrays);
+              if (!randomNums.includes(randomNum)) {
+                randomNums.push(randomNum);
+                var random = dbCategories[randomNum];
+                randomCats.push(
+                  {
+                    id: random.dataValues.id,
+                    category: random.dataValues.category_name,
+                    img: random.dataValues.image,
+                    diff: difficulty
+                  });
+              }
+            }
+            console.log(randomCats);
+
+            var array1 = [randomCats[0], randomCats[1], randomCats[2]];
+            var array2 = [randomCats[3], randomCats[4], randomCats[5]];
+            var array3 = [randomCats[6], randomCats[7], randomCats[8]];
+            var arrays = { topRow: array1, middleRow: array2, bottomRow: array3 };
+            console.log(arrays);
+
+            res.render("index", arrays);
+
+          })
+
+        });
     });
   });
 
-  app.get("/category/:id", function (req, res) {
+  app.get("/category/:difficulty/:id", function (req, res) {
     db.Question.findAll({
       where: {
-        CategoryId: req.params.id
+        CategoryId: req.params.id,
+        difficulty: req.params.difficulty
       }
     }).then(function (dbQuestions) {
       console.log(JSON.stringify(dbQuestions, null, 2));
       unansweredQuestions = [];
-      for(var i = 0; i < dbQuestions.length; i++){
-        if(!dbQuestions[i].answered){
+      for (var i = 0; i < dbQuestions.length; i++) {
+        if (!dbQuestions[i].answered) {
           unansweredQuestions.push(dbQuestions[i]);
         }
       };
@@ -67,13 +88,13 @@ module.exports = function (app) {
         var randomQs = [];
         var randomNums = [];
         var questionNum = 1;
-        if (unansweredQuestions.length > 4) {
+        if (unansweredQuestions.length > 5) {
           while (randomQs.length < 5) {
             randomNum = Math.floor(Math.random() * 5);
 
             if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
               randomNums.push(randomNum);
-              var random = dbQuestions[randomNum];
+              var random = unansweredQuestions[randomNum];
               randomQs.push(
                 {
                   id: random.id,
@@ -89,6 +110,8 @@ module.exports = function (app) {
               questionNum++;
             }
           }
+          console.log("RandomQs");
+          console.log(randomQs);
         } else {
           while (randomQs.length < unansweredQuestions.length) {
             randomNum = Math.floor(Math.random() * dbQuestions.length);
@@ -113,7 +136,7 @@ module.exports = function (app) {
           }
         }
         console.log(randomQs);
-        res.render("category", { questions: randomQs, currentCat: [dbCategory.category_name], background: [dbCategory.image]});
+        res.render("category", { questions: randomQs, currentCat: [dbCategory.category_name], background: [dbCategory.image] });
       });
     });
 
