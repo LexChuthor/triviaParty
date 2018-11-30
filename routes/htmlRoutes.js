@@ -64,10 +64,11 @@ module.exports = function (app) {
       }).then(function (dbCategory) {
         console.log(JSON.stringify(dbCategory, null, 2));
 
+        var randomNum;
         var randomQs = [];
         var randomNums = [];
         var questionNum = 1;
-        if (unansweredQuestions.length > 4) {
+        if (unansweredQuestions.length > 5) {
           while (randomQs.length < 5) {
             randomNum = Math.floor(Math.random() * 5);
 
