@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-image: url("../images/background3.jpg");
+    background-image: url("../images/background10.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@ h1, h3, h4{
 }
 
 .currentCat{
-  background-color: aqua;
+  background-color:rgba(164, 198, 226, 0.2);;
   width: 20%;
   margin: 0 auto;
   border-radius: 30px;
