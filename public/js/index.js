@@ -7,6 +7,7 @@ $(document).ready(function () {
   console.log(sessionStorage.getItem("player"));
   if (sessionStorage.getItem("player") === null) {
     setTimeout(function() { showModal(); }, 2000);
+    $("#log-in").prop("disabled", true);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
     $("#score1").text(sessionStorage.getItem("score"));
@@ -15,12 +16,21 @@ $(document).ready(function () {
 
 var difficulty;
 
-$(".ch-info-back").on("click", function(){
+$(".diffButton").on("click", function(){
   difficulty = $(this).children().data("id");
+  if($("#playerName").val()){
+    $("#log-in").prop("disabled", false);
+  }
+
+$("#playerName").on("input", function(){
+if(difficulty){
+    $("#log-in").prop("disabled", false);
+  }
 });
+
 $("#log-in").on("click", function() {
   event.preventDefault();
-  var playerName = $("#userName")
+  var playerName = $("#playerName")
     .val()
     .trim();
   $(".Player1").text(playerName);
@@ -31,7 +41,10 @@ $("#log-in").on("click", function() {
     difficulty: difficulty
   }).then(function() {
     console.log("something happened");
+    location.reload();
   });
+  
+});
 });
 
 
