@@ -87,7 +87,8 @@ $("#showHighScores").on("click", function () {
     highScores.sort(compare);
     for (var j = 0; j < 10; j++) {
       $(".highScoreTable").append(`
-    <tr style="margin-bottom: 3px">
+    <tr style="border-bottom: 2px solid black">
+      <td>${j + 1}</td>
       <td>${highScores[j].name}</td>
       <td>${highScores[j].highScore}</td>
     </tr>
