@@ -1,12 +1,22 @@
 function showModal() {
-  $('#signInModal').modal({backdrop: 'static', keyboard: false}); 
+  $('#signInModal').modal({ backdrop: 'static', keyboard: false });
 };
 
 $(document).ready(function () {
   // Show After 2 Seconds
   console.log(sessionStorage.getItem("player"));
   if (sessionStorage.getItem("player") === null) {
-    setTimeout(function() { showModal(); }, 2000);
+    setTimeout(function () { showModal(); }, 2000);
+    let id = 9;
+    for (var i = 1; i < id; i++) {
+      $.ajax({
+        method: "PUT",
+        url: "/api/questions/" + i,
+        data: { "answered": false }
+      }).then(function () {
+        console.log("updated!");
+      });
+    }
     $("#log-in").prop("disabled", true);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
@@ -20,38 +30,49 @@ $(document).ready(function () {
 
 var difficulty;
 
-$(".diffButton").on("click", function(){
+$(".diffButton").on("click", function () {
   difficulty = $(this).children().data("id");
-  if($("#playerName").val()){
+  if ($("#playerName").val()) {
     $("#log-in").prop("disabled", false);
   }
 
-$("#playerName").on("input", function(){
-if(difficulty){
-    $("#log-in").prop("disabled", false);
-  }
-});
-
-$("#log-in").on("click", function() {
-  event.preventDefault();
-  var playerName = $("#playerName")
-    .val()
-    .trim();
-  $(".Player1").text(playerName);
-  sessionStorage.setItem("player", playerName);
-  sessionStorage.setItem("difficulty", difficulty);
-  $.post("/api/player", {
-    player_name: playerName,
-    difficulty: difficulty
-  }).then(function() {
-    console.log("something happened");
-    location.reload();
+  $("#playerName").on("input", function () {
+    if (difficulty) {
+      $("#log-in").prop("disabled", false);
+    }
   });
-  
-});
+
+  $("#log-in").on("click", function () {
+    event.preventDefault();
+    var playerName = $("#playerName")
+      .val()
+      .trim();
+    $(".Player1").text(playerName);
+    sessionStorage.setItem("player", playerName);
+    sessionStorage.setItem("difficulty", difficulty);
+    $.post("/api/player", {
+      player_name: playerName,
+      difficulty: difficulty
+    },function (response) {
+      console.log("something happened");
+      console.log(response);
+      sessionStorage.setItem("playerID", response.id);
+      location.reload();
+    });
+
+  });
 });
 
-
+$(document).on("click", "#submitHighScore", function(){
+  $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+  var id = sessionStorage.getItem("playerID");
+  $.ajax({
+    method: "PUT",
+    url: "/api/player/" + id,
+    data: {"highScore": sessionStorage.getItem("score")}
+  });
+  $(".pointsBody").text("Thank you for submitting your high score!");
+});
 
 
 // Get references to page elements

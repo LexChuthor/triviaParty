@@ -7,6 +7,14 @@ $(document).ready(function () {
     $("#score1").text(": 0");
   } else {
     $("#score1").text(": " +sessionStorage.getItem("score"));
+    if(parseInt(sessionStorage.getItem("score"))=== 100){
+
+    }
+  }  
+  if(sessionStorage.getItem("score") == 100){
+    $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+    $(".pointsTitle").text("You have reached 100 points!");
+    $(".pointsBody").text("You may continue to play, or save your winning score now!");
   }
 });
 
@@ -55,8 +63,9 @@ $(document).on("click", ".submit", function (event) {
       if (score === null) {
         score = 0;
       }
-      score += 5;
-      sessionStorage.setItem("score", score);
+      score = parseInt(score);
+      score += 100;
+      sessionStorage.setItem("score", score.toString());
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
@@ -79,5 +88,20 @@ $(document).on("click", ".submit", function (event) {
     $("#questionPage").hide();
     location.reload();
   });
+});
 
+$("#back").on("click", function(){
+  event.preventDefault();
+  window.location.href = "/";
+})
+
+$(document).on("click", "#submitHighScore", function(){
+  $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+  var id = sessionStorage.getItem("playerID");
+  $.ajax({
+    method: "PUT",
+    url: "/api/player/" + id,
+    data: {"highScore": sessionStorage.getItem("score")}
+  });
+  $(".pointsBody").text("Thank you for submitting your high score!");
 });
