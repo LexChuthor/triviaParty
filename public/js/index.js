@@ -53,7 +53,7 @@ $(".diffButton").on("click", function () {
     $.post("/api/player", {
       player_name: playerName,
       difficulty: difficulty
-    },function (response) {
+    }, function (response) {
       console.log("something happened");
       console.log(response);
       sessionStorage.setItem("playerID", response.id);
@@ -63,18 +63,49 @@ $(".diffButton").on("click", function () {
   });
 });
 
-$(document).on("click", "#submitHighScore", function(){
+$(document).on("click", "#submitHighScore", function () {
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
   var id = sessionStorage.getItem("playerID");
   $.ajax({
     method: "PUT",
     url: "/api/player/" + id,
-    data: {"highScore": sessionStorage.getItem("score")}
+    data: { "highScore": sessionStorage.getItem("score") }
   });
   $(".pointsBody").text("Thank you for submitting your high score!");
 });
 
+$("#showHighScores").on("click", function () {
+  $('#highScoresModal').modal({ backdrop: 'static', keyboard: false });
+  var highScores = [];
+  $.get("/api/player", function (response) {
+    for (var i = 0; i < response.length; i++) {
+      highScores.push({
+        name: response[i].player_name,
+        highScore: parseInt(response[i].highScore)
+      });
+    }
+    highScores.sort(compare);
+    for (var j = 0; j < 10; j++) {
+      $(".highScoreTable").append(`
+    <tr style="margin-bottom: 3px">
+      <td>${highScores[j].name}</td>
+      <td>${highScores[j].highScore}</td>
+    </tr>
+  `);
+    }
+  });
+});
 
+
+function compare(a, b) {
+  const valA = a.highScore;
+  const valB = b.highScore;
+
+  if (valA > valB) return -1;
+  if (valB < valA) return 1;
+
+  return 0;
+}
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");

@@ -47,6 +47,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/player", function(req, res){
+    db.Player.findAll({}).then(function(players){
+      res.json(players);
+    });
+  });
+
   app.post("/api/player", function(req, res) {
     db.Player.create(req.body).then(function(player) {
       res.json(player);
