@@ -10,10 +10,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/questions/:id", function(req, res) {
+  app.get("/api/questions/:difficulty/:id", function(req, res) {
     db.Question.findOne({
       where: {
-        id: req.params.id
+        id: req.params.id,
+        difficulty: req.params.difficulty
       }
     })
     .then(function(dbQuestion){

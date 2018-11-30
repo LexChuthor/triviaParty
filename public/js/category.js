@@ -10,10 +10,12 @@ $(".question").on("click", function () {
   $("#questionPage").show();
 
   var qID = $(this).data("id");
+  var difficulty = sessionStorage.getItem("difficulty");
+  console.log("Difficulty: " + difficulty);
   console.log("qID: " + qID);
 
-  $.get("/api/questions/" + qID, function (response) {
-    console.log(response);
+  $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
+    console.log(response.text);
     $("#questionText").text(response.text);
     $(".option1").attr("value", response.answer1);
     $(".option2").attr("value", response.answer2);
@@ -33,10 +35,11 @@ $(".question").on("click", function () {
 $(document).on("click", ".submit", function (event) {
   event.preventDefault();
   var qID = $(this).data("id");
+  var difficulty = sessionStorage.getItem("difficulty");
   console.log("qID: " + qID);
   $('#answerModal').modal({backdrop: 'static', keyboard: false}); 
 
-  $.get("/api/questions/" + qID, function (response) {
+  $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
     console.log("Value: " + $("input[name=choices]:checked").val());
     console.log("Answer: " + response.correctAnswer);
     if ($("input[name=choices]:checked").val() === response.correctAnswer) {
