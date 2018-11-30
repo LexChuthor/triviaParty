@@ -3,10 +3,10 @@ function showModal() {
 };
 
 $(document).ready(function () {
-  // Show After 6 Seconds
+  // Show After 2 Seconds
   console.log(sessionStorage.getItem("player"));
   if (sessionStorage.getItem("player") === null) {
-    setTimeout(function() { showModal(); }, 4000);
+    setTimeout(function() { showModal(); }, 2000);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
     $("#score1").text(sessionStorage.getItem("score"));
