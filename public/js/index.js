@@ -1,12 +1,12 @@
 function showModal() {
-  $('#signInModal').modal({backdrop: 'static', keyboard: false}); 
+  $('#signInModal').modal({ backdrop: 'static', keyboard: false });
 };
 
 $(document).ready(function () {
   // Show After 2 Seconds
   console.log(sessionStorage.getItem("player"));
   if (sessionStorage.getItem("player") === null) {
-    setTimeout(function() { showModal(); }, 2000);
+    setTimeout(function () { showModal(); }, 2000);
     $("#log-in").prop("disabled", true);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
@@ -16,39 +16,39 @@ $(document).ready(function () {
 
 var difficulty;
 
-$(".diffButton").on("click", function(){
+$(".diffButton").on("click", function () {
   difficulty = $(this).children().data("id");
-  if($("#playerName").val()){
+  if ($("#playerName").val()) {
     $("#log-in").prop("disabled", false);
   }
 
-$("#playerName").on("input", function(){
-if(difficulty){
-    $("#log-in").prop("disabled", false);
-  }
-});
-
-$("#log-in").on("click", function() {
-  event.preventDefault();
-  var playerName = $("#playerName")
-    .val()
-    .trim();
-  $(".Player1").text(playerName);
-  sessionStorage.setItem("player", playerName);
-  sessionStorage.setItem("difficulty", difficulty);
-  sessionStorage.setItem("HistoryAnswered", 0);
-  sessionStorage.setItem("MusicAnswered", 0);
-  $.post("/api/player", {
-    player_name: playerName,
-    difficulty: difficulty
-  }).then(function() {
-    console.log("something happened");
-    location.reload();
+  $("#playerName").on("input", function () {
+    if (difficulty) {
+      $("#log-in").prop("disabled", false);
+    }
   });
-  
+
+  $("#log-in").on("click", function () {
+    event.preventDefault();
+    var playerName = $("#playerName")
+      .val()
+      .trim();
+    $(".Player1").text(playerName);
+    sessionStorage.setItem("player", playerName);
+    sessionStorage.setItem("difficulty", difficulty);
+    sessionStorage.setItem("HistoryAnswered", 0);
+    sessionStorage.setItem("MusicAnswered", 0);
+    $.post("/api/player", {
+      player_name: playerName,
+      difficulty: difficulty
+    }).then(function () {
+      console.log("something happened");
+      location.reload();
+    });
+
+  });
+
 });
-
-
 
 
 // Get references to page elements

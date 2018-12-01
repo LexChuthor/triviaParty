@@ -2,8 +2,10 @@ $(document).ready(function () {
 
   console.log(sessionStorage.getItem("player"));
   $(".Player1").text(sessionStorage.getItem("player"));
-  $("#score1").text(sessionStorage.getItem("score"));
+  $("#score1").text(sessionStorage.getItem("score"));  
 });
+
+var name = $(".currentCat").text() + "Answered";
 
 $(".question").on("click", function () {
   $("#categoryPage").hide();
@@ -31,11 +33,13 @@ $(".question").on("click", function () {
   });
 });
 
+var qAnswered = sessionStorage.getItem(name);
 
 $(document).on("click", ".submit", function (event) {
   event.preventDefault();
   var qID = $(this).data("id");
   var difficulty = sessionStorage.getItem("difficulty");
+  qAnswered++;
   console.log("qID: " + qID);
   $('#answerModal').modal({backdrop: 'static', keyboard: false}); 
 
@@ -60,6 +64,7 @@ $(document).on("click", ".submit", function (event) {
   }).then(
     function (response) {
       console.log(response);
+      sessionStorage.setItem(name, qAnswered);
     });
 
   $(".answerClose").on("click", function () {
