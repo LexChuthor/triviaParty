@@ -36,6 +36,7 @@ h1{
     from, to { border-color: transparent }
   }
 
+
 #players {
     margin-top: 3rem;
     color: rgb(24, 23, 23);
@@ -44,7 +45,12 @@ h1{
 
 }
 
-
+.modal-title {
+  margin: auto;
+}
+.form-control {
+  margin-left: 9.5rem;
+}
 
 h1, h3, h4{
   font-family: 'Allerta Stencil', sans-serif;
