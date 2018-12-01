@@ -1,94 +1,94 @@
 body{
-    text-align: center;
-    background-image: url("../images/background10.jpg");
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: 100%;
+  text-align: center;
+  background-image: url("../images/background10.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 h1{
-  color: rgb(248, 225, 225);
-  text-shadow: 0 0 20px rgb(148, 133, 133);
-  font-size: 3rem;
-  font-family: 'Allerta Stencil', sans-serif;
-  margin: 3rem auto 0 auto;
-  letter-spacing: .15em; /* Adjust as needed */
+color: rgb(248, 225, 225);
+text-shadow: 0 0 20px rgb(148, 133, 133);
+font-size: 3rem;
+font-family: 'Allerta Stencil', sans-serif;
+margin: 3rem auto 0 auto;
+letter-spacing: .15em; /* Adjust as needed */
 }
 
 #players {
-  background-color:rgba(164, 198, 226, 0.2);
-  width: 40rem;
-  margin: 0 auto;
-  border-radius: 30px;
+background-color:rgba(164, 198, 226, 0.2);
+width: 40rem;
+margin: 0 auto;
+border-radius: 30px;
 }
 
 .display-4 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 3rem auto 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
-      typing 6s steps(30, end),
-      blink-caret .5s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-  }
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 3rem auto 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 6s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+}
 
 
 #players {
-    margin-top: 3rem;
-    color: rgb(248, 225, 225);
-    text-shadow: 0 0 40px rgb(148, 133, 133);
-    font-family: 'Allerta Stencil', sans-serif;
-    background: rgba(164, 198, 226, 0.2);
+  margin-top: 3rem;
+  color: rgb(248, 225, 225);
+  text-shadow: 0 0 40px rgb(148, 133, 133);
+  font-family: 'Allerta Stencil', sans-serif;
+  background: rgba(164, 198, 226, 0.2);
 }
 
 #score1 {
-  font-size: 2rem;
+font-size: 2rem;
 }
 
 /* buttons */
 .btn {
-  margin-left: 5rem;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 10px 16px;
+margin-left: 5rem;
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+padding: 10px 16px;
 }
-  
+
 .btn-lg {
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
+font-size: 18px;
+line-height: 1.33;
+border-radius: 6px;
 }
 
 .btn-light {
-  color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
 }
 
 .btn-light:hover,
@@ -96,157 +96,306 @@ h1{
 .btn-light:active,
 .btn-light.active,
 .open .dropdown-toggle.btn-light {
-  color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+color: #fff;
+background-color: #3276b1;
+border-color: #285e8e;
 }
 
 /***********************
-  OUTLINE BUTTONS
+OUTLINE BUTTONS
 ************************/
 
 .btn.outline {
-    background: none;
-    padding: 12px 22px;
+  background: none;
+  padding: 12px 22px;
 }
 .btn-light.outline {
-    border: 2px solid #9de1f8;
-    color: #beefff;
+  border: 2px solid #9de1f8;
+  color: #beefff;
 }
 .btn-light.outline:hover, .btn-light.outline:focus, .btn-light.outline:active, .btn-light.outline.active, .open > .dropdown-toggle.btn-light {
-    color: #94d5eb;
-    border-color: #9fdaee;
+  color: #94d5eb;
+  border-color: #9fdaee;
 }
 .btn-light.outline:active, .btn-light.outline.active {
-    border-color: #007299;
-    color: #007299;
-    box-shadow: none;
+  border-color: #007299;
+  color: #007299;
+  box-shadow: none;
 }
 
 /***********************
-  CUSTON BTN VALUES
+CUSTON BTN VALUES
 ************************/
 
 .btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
+  outline: 0 none;
 }
 
 .modal-title {
-  margin: auto;
+margin: 0 auto;
 }
 .form-control {
-  margin-left: 9.5rem;
+margin-left: 9.5rem;
 }
 
 h1, h3, h4{
-  font-family: 'Allerta Stencil', sans-serif;
+font-family: 'Allerta Stencil', sans-serif;
 }
 
 #questionPage{
-  display: none;
+display: none;
 }
 
 #questionPage p, #questionPage span{
-  text-shadow: 0 0 20px rgb(148, 133, 133);
-  margin: 0 auto;
-  font-size: 2rem;
-  color: rgb(248, 225, 225);
+text-shadow: 0 0 20px rgb(148, 133, 133);
+margin: 0 auto;
+font-size: 2rem;
+color: rgb(248, 225, 225);
 }
 
 .submit{
-  margin: 0 auto;
+margin: 0 auto;
 }
 
 .question{
-  cursor: pointer;
+cursor: pointer;
 }
 
-
+h5{
+  padding-right: 30px;
+}
 
 .currentCat{
-  background-color:rgba(164, 198, 226, 0.2);;
-  color: rgb(248, 225, 225);
-  width: 20%;
-  margin: 0 auto;
-  border-radius: 30px;
+background-color:rgba(164, 198, 226, 0.2);;
+color: rgb(248, 225, 225);
+width: 20%;
+margin: 0 auto;
+border-radius: 30px;
 }
 
 .body{
-  background-size: 100% 100%;
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
+background-size: 100% 100%;
+position: absolute;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
 }
 
-
+/***********************
+BACKGROUND-IMAGE SETTINGS
+************************/
 
 .tv-background{
-  background-image: url(../images/tv-background.jpg);
+background-image: url(../images/tv-background.jpg);
 }
 
 .books-background{
-  background-image: url(../images/books-background.jpg);
+background-image: url(../images/books-background.jpg);
 }
 
 .videogames-background{
-  background-image: url(../images/videogames-background.jpg);
+background-image: url(../images/videogames-background.jpg);
 }
 
 .anime-background{
-  background-image: url(../images/anime-background.jpg);
+background-image: url(../images/anime-background.jpg);
 }
 
 .art-background{
-  background-image: url(../images/art-background.jpg);
+background-image: url(../images/art-background.jpg);
 }
 
 .food-background{
-  background-image: url(../images/food-background.jpg);
+background-image: url(../images/food-background.jpg);
 }
 
 .plants-background{
-  background-image: url(../images/plants-background.jpg);
+background-image: url(../images/plants-background.jpg);
 }
 
 .sports-background{
-  background-image: url(../images/sports-background.jpg);
+background-image: url(../images/sports-background.jpg);
 }
 
 .weather-background{
-  background-image: url(../images/weather-background.jpg);
+background-image: url(../images/weather-background.jpg);
 }
 
 .film-background{
-  background-image: url(../images/film-background.jpg);
+background-image: url(../images/film-background.jpg);
 }
 
 .animal-background{
-  background-image: url(../images/animal-background.jpg);
+background-image: url(../images/animal-background.jpg);
 }
 
 .music-background{
-  background-image: url(../images/music-background.jpg);
+background-image: url(../images/music-background.jpg);
 }
 
 .technology-background{
-  background-image: url(../images/technology-background.jpg);
+background-image: url(../images/technology-background.jpg);
 }
 
 .history-background{
-  background-image: url(../images/history-background.jpg);
+background-image: url(../images/history-background.jpg);
 }
 
 .geography-background{
-  background-image: url(../images/geography-background.jpg);
+background-image: url(../images/geography-background.jpg);
 }
   
+/***********************
+CUSTON MODAL EFFECTS
+************************/
 
+.md-perspective,
+.md-perspective body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.md-perspective body  {
+	background: #222;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	perspective: 600px;
+}
+
+.md-modal {
+  position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	max-width: 630px;
+	min-width: 320px;
+	height: auto;
+	z-index: 2000;
+  visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-content {
+	background: #fff;
+	position: relative;
+	border-radius: 3px;
+	margin: 0 auto;
+}
+
+.md-show {
+  visibility: visible;
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+.md-effect-4 .md-content {
+	-webkit-transform: scale(0) rotate(720deg);
+	-moz-transform: scale(0) rotate(720deg);
+	-ms-transform: scale(0) rotate(720deg);
+	transform: scale(0) rotate(720deg);
+	opacity: 0;
+}
+
+.md-show.md-effect-4 ~ .md-overlay,
+.md-effect-4 .md-content {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.md-show.md-effect-4 .md-content {
+	-webkit-transform: scale(1) rotate(0deg);
+	-moz-transform: scale(1) rotate(0deg);
+	-ms-transform: scale(1) rotate(0deg);
+	transform: scale(1) rotate(0deg);
+	opacity: 1;
+}
+
+.md-show.md-effect-18 ~ .body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.md-show.md-effect-18 ~ .md-overlay {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.md-show.md-effect-18 ~ .body,
+.md-show.md-effect-18 ~ .md-overlay {
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateRightSideFirst 0.5s forwards ease-in;
+	-moz-transform-style: preserve-3d;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateRightSideFirst 0.5s forwards ease-in;
+	transform-style: preserve-3d;
+	transform-origin: 0% 50%;
+	animation: rotateRightSideFirst 0.5s forwards ease-in;
+}
+
+@-webkit-keyframes rotateRightSideFirst {
+	50% { -webkit-transform: translateZ(-50px) rotateY(5deg); -webkit-animation-timing-function: ease-out; }
+	100% { -webkit-transform: translateZ(-200px); }
+}
+
+@-moz-keyframes rotateRightSideFirst {
+	50% { -moz-transform: translateZ(-50px) rotateY(5deg); -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: translateZ(-200px); }
+}
+
+@keyframes rotateRightSideFirst {
+	50% { transform: translateZ(-50px) rotateY(5deg); animation-timing-function: ease-out; }
+	100% { transform: translateZ(-200px); }
+}
+
+.md-effect-18 .md-content {
+	-webkit-transform: translateX(200%);
+	-moz-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
+	opacity: 0;
+}
+
+.md-show.md-effect-18 .md-content {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+	opacity: 1;
+	-webkit-transition: all 0.5s 0.1s;
+	-moz-transition: all 0.5s 0.1s;
+	transition: all 0.5s 0.1s;
+}

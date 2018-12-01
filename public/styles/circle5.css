@@ -64,11 +64,13 @@ ch-info5-wrap,
 .ch-info5 .ch-info-front5 {
 	background-size: 160%;
 	transition: all 0.6s ease-in-out;
+	border: 5px solid black;
 }
 
 .ch-info5 .ch-info-back5 {
 	opacity: 0;
-	background: #223e87;
+	background: brown;
+	border: 5px solid black;
 	pointer-events: none;
 	transform: scale(1.5);
 	transition: all 0.4s ease-in-out 0.2s;
@@ -135,12 +137,12 @@ ch-info5-wrap,
 }
 
 
-
 .ch-info5 h3 {
-	color: #fff;
+	color: black;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 18px;
+	font-weight: bold;
 	margin: 0 15px;
 	padding: 40px 0 0 0;
 	height: 80px;
@@ -185,3 +187,4 @@ ch-info5-wrap,
 	opacity: 1;
 	pointer-events: auto;
 }
+

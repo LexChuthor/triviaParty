@@ -1,6 +1,6 @@
 <h1 class="display-4">Trivia Trove</h1>
 <div id="players">
-    <h2 class="Player1 d-inline">Player 1:
+    <h2 class="Player1 d-inline">Player:
     </h2><span id="score1"></span>
     <button type="submit" class="btn btn-light btn-lg outline" id="submitHighScore">Submit Score</button>
     {{!-- <h2 class="player2 d-inline">Player 2:
@@ -76,7 +76,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
+                    <h5 class="modal-title scoresTitle" id="exampleModalLabel">Top 10 High Scores</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="scoresClose" aria-hidden="true">&times;</span>
                     </button>
@@ -179,7 +179,6 @@
             </div>
             <div class="modal-body">
                 <p class="pointsBody"></p>
-                <button type="submit" id="submitHighScore">Submit Score</button>
             </div>
         </div>
     </div>
