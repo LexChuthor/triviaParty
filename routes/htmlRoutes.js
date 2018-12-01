@@ -91,9 +91,11 @@ module.exports = function (app) {
         var questionNum = 1;
         if (unansweredQuestions.length > 5) {
           while (randomQs.length < 5) {
-             randomNum = Math.floor(Math.random() * 5);
+             randomNum = Math.floor(Math.random() * (unansweredQuestions.length + 1));
+            
 
-            if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
+            if (!randomNums.includes(randomNum) && !unansweredQuestions[randomNum].answered) {
+             
               randomNums.push(randomNum);
               var random = unansweredQuestions[randomNum];
               randomQs.push(
@@ -115,11 +117,12 @@ module.exports = function (app) {
           console.log(randomQs);
         } else {
           while (randomQs.length < unansweredQuestions.length) {
-            randomNum = Math.floor(Math.random() * dbQuestions.length);
+            
+            randomNum = Math.floor(Math.random() * unansweredQuestions.length);
 
-            if (!randomNums.includes(randomNum) && !dbQuestions[randomNum].answered) {
+            if (!randomNums.includes(randomNum) && !unansweredQuestions[randomNum].answered) {
               randomNums.push(randomNum);
-              var random = dbQuestions[randomNum];
+              var random = unansweredQuestions[randomNum];
               randomQs.push(
                 {
                   id: random.id,

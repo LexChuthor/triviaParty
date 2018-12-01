@@ -8,7 +8,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("player") === null) {
     setTimeout(function () { showModal(); }, 2000);
 
-    let id = 9;
+    let id = 11;
     for (var i = 1; i < id; i++) {
       $.ajax({
         method: "PUT",
@@ -29,51 +29,51 @@ $(document).ready(function () {
     }
   }
 
-  if(sessionStorage.getItem("HistoryAnswered") == 8){
+  if (sessionStorage.getItem("HistoryAnswered") == 8) {
     $(".History").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("SportsAnswered") == 8){
+  if (sessionStorage.getItem("SportsAnswered") == 8) {
     $(".Sports").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("GeographyAnswered") == 8){
+  if (sessionStorage.getItem("GeographyAnswered") == 8) {
     $(".Geography").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("FilmAnswered") == 8){
+  if (sessionStorage.getItem("FilmAnswered") == 8) {
     $(".Film").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("Video GamesAnswered") == 8){
+  if (sessionStorage.getItem("Video GamesAnswered") == 8) {
     $(".Video").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("MusicAnswered") == 8){
+  if (sessionStorage.getItem("MusicAnswered") == 8) {
     $(".Music").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("AnimalsAnswered") == 8){
+  if (sessionStorage.getItem("AnimalsAnswered") == 8) {
     $(".Animals").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("TechnologyAnswered") == 8){
+  if (sessionStorage.getItem("TechnologyAnswered") == 8) {
     $(".Technology").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("BooksAnswered") == 8){
+  if (sessionStorage.getItem("BooksAnswered") == 8) {
     $(".Books").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("AnimeAnswered") == 8){
+  if (sessionStorage.getItem("AnimeAnswered") == 8) {
     $(".Anime").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("TelevisionAnswered") == 8){
+  if (sessionStorage.getItem("TelevisionAnswered") == 8) {
     $(".Television").empty().append(`<br><h3>Completed</h3>`);
   };
 
-  if(sessionStorage.getItem("ArtAnswered") == 8){
+  if (sessionStorage.getItem("ArtAnswered") == 8) {
     $(".Art").empty().append(`<br><h3>Completed</h3>`);
   };
 });
@@ -114,10 +114,6 @@ $(".diffButton").on("click", function () {
     sessionStorage.setItem("AnimalsAnswered", 0);
     sessionStorage.setItem("BooksAnswered", 0);
 
-
-
-
-
     $.post("/api/player", {
       player_name: playerName,
       difficulty: difficulty
@@ -141,6 +137,10 @@ $(document).on("click", "#submitHighScore", function () {
   });
   $(".pointsBody").text("Thank you for submitting your high score!");
 });
+
+$("#randomize").on("click", function(){
+  location.reload();
+})
 
 $("#showHighScores").on("click", function () {
   $('#highScoresModal').modal({ backdrop: 'static', keyboard: false });

@@ -18,6 +18,7 @@ module.exports = function(app) {
       }
     })
     .then(function(dbQuestion){
+      console.log("Question Route: ");
       res.json(dbQuestion);
     });
   });

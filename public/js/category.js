@@ -64,10 +64,9 @@ $(document).on("click", ".submit", function (event) {
         score = 0;
       }
       score = parseInt(score);
-      score += 100;
+      score += 5;
       sessionStorage.setItem("score", score.toString());
-
-
+      
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
@@ -88,7 +87,7 @@ $(document).on("click", ".submit", function (event) {
 });
 
 $(".answerClose").on("click", function () {
-  if (sessionStorage.getItem("score") == 200 && sessionStorage.getItem(name) == 8) {
+  if (sessionStorage.getItem("score") == 100 && sessionStorage.getItem(name) == 8) {
 
     $('#winnerModal').modal({ backdrop: 'static', keyboard: false });
     $(".winnerTitle").text("That's correct! You have reached 100 points!");
@@ -98,7 +97,7 @@ $(".answerClose").on("click", function () {
       window.location.href = "/";
     })
 
-  } else if (sessionStorage.getItem("score") == 200) {
+  } else if (sessionStorage.getItem("score") == 100) {
     $('#winnerModal').modal({ backdrop: 'static', keyboard: false });
     $(".winnerTitle").text("Winner! You just reached 100 points!");
     $(".winnerBody").text("You may continue to play, or save your winning score now!");
