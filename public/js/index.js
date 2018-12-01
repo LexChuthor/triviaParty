@@ -28,6 +28,54 @@ $(document).ready(function () {
       $("#score1").text(":" + sessionStorage.getItem("score"));
     }
   }
+
+  if(sessionStorage.getItem("HistoryAnswered") == 8){
+    $(".History").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("SportsAnswered") == 8){
+    $(".Sports").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("GeographyAnswered") == 8){
+    $(".Geography").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("FilmAnswered") == 8){
+    $(".Film").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("Video GamesAnswered") == 8){
+    $(".Video").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("MusicAnswered") == 8){
+    $(".Music").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("AnimalsAnswered") == 8){
+    $(".Animals").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("TechnologyAnswered") == 8){
+    $(".Technology").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("BooksAnswered") == 8){
+    $(".Books").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("AnimeAnswered") == 8){
+    $(".Anime").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("TelevisionAnswered") == 8){
+    $(".Television").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if(sessionStorage.getItem("ArtAnswered") == 8){
+    $(".Art").empty().append(`<br><h3>Completed</h3>`);
+  };
 });
 
 var difficulty;

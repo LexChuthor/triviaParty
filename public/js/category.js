@@ -92,7 +92,11 @@ $(document).on("click", ".submit", function (event) {
   $(".answerClose").on("click", function () {
     //$("#categoryPage").show();
     //$("#questionPage").hide();
+    if(sessionStorage.getItem(name) < 5){
     location.reload();
+    } else {
+      window.location.href = "/";
+    }
   });
 });
 
