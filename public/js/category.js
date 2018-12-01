@@ -89,13 +89,13 @@ $(document).on("click", ".submit", function (event) {
     });
 
   $(".answerClose").on("click", function () {
-    $("#categoryPage").show();
-    $("#questionPage").hide();
+    //$("#categoryPage").show();
+    //$("#questionPage").hide();
     location.reload();
   });
 });
 
-$("#back").on("click", function(){
+$("#back").on("click", function(event){
   event.preventDefault();
   window.location.href = "/";
 })

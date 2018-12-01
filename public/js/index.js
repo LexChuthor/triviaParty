@@ -52,8 +52,24 @@ $(".diffButton").on("click", function () {
     $(".Player1").text(playerName);
     sessionStorage.setItem("player", playerName);
     sessionStorage.setItem("difficulty", difficulty);
+
+    sessionStorage.setItem("ArtAnswered", 0);
+    sessionStorage.setItem("FilmAnswered", 0);
+    sessionStorage.setItem("TelevisionAnswered", 0);
+    sessionStorage.setItem("AnimeAnswered", 0);
+    sessionStorage.setItem("TechnologyAnswered", 0);
+    sessionStorage.setItem("GeographyAnswered", 0);
+    sessionStorage.setItem("SportsAnswered", 0);
     sessionStorage.setItem("HistoryAnswered", 0);
     sessionStorage.setItem("MusicAnswered", 0);
+    sessionStorage.setItem("Video GamesAnswered", 0);
+    sessionStorage.setItem("AnimalsAnswered", 0);
+    sessionStorage.setItem("BooksAnswered", 0);
+
+
+
+
+
     $.post("/api/player", {
       player_name: playerName,
       difficulty: difficulty
