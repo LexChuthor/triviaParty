@@ -7,10 +7,10 @@ $(document).ready(function () {
     $("#score1").text(": 0");
   } else {
     $("#score1").text(": " + sessionStorage.getItem("score"));
-    if(parseInt(sessionStorage.getItem("score"))=== 100){
+    if (parseInt(sessionStorage.getItem("score")) === 100) {
 
     }
-  }  
+  }
 });
 
 var name = $(".currentCat").text() + "Answered";
@@ -23,6 +23,7 @@ $(".question").on("click", function () {
   var difficulty = sessionStorage.getItem("difficulty");
   console.log("Difficulty: " + difficulty);
   console.log("qID: " + qID);
+
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
     console.log(response);
@@ -50,7 +51,7 @@ $(document).on("click", ".submit", function (event) {
   var difficulty = sessionStorage.getItem("difficulty");
   qAnswered++;
   console.log("qID: " + qID);
-  $('#answerModal').modal({ backdrop: 'static', keyboard: false });
+
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
     console.log("Value: " + $("input[name=choices]:checked").val());
@@ -65,19 +66,15 @@ $(document).on("click", ".submit", function (event) {
       score = parseInt(score);
       score += 100;
       sessionStorage.setItem("score", score.toString());
-      if(sessionStorage.getItem("score") == 100){
-        $("#answerModal").modal("hide");
-        $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
-        $(".pointsTitle").text("You have reached 100 points!");
-        $(".pointsBody").text("You may continue to play, or save your winning score now!");
-      }
+
+
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
     };
     $("input[name=choices]:checked").prop('checked', false);
-    $(".submitRow").empty();
-    $(".submitRow").append("<button class='submit' type='submit'>Submit</button>");
+
+
   });
 
   $.ajax("/api/questions/" + qID, {
@@ -88,31 +85,63 @@ $(document).on("click", ".submit", function (event) {
       console.log(response);
       sessionStorage.setItem(name, qAnswered);
     });
-
-  $(".answerClose").on("click", function () {
-    //$("#categoryPage").show();
-    //$("#questionPage").hide();
-    if(sessionStorage.getItem(name) < 8){
-    location.reload();
-    } else {
-      window.location.href = "/";
-    }
-  });
 });
 
-$("#back").on("click", function(event){
+$(".answerClose").on("click", function () {
+  if (sessionStorage.getItem("score") == 200 && sessionStorage.getItem(name) == 8) {
+
+    $('#winnerModal').modal({ backdrop: 'static', keyboard: false });
+    $(".winnerTitle").text("That's correct! You have reached 100 points!");
+    $(".winnerBody").text("You may continue to play, or save your winning score now!");
+
+    $(".winnerClose").on("click", function () {
+      window.location.href = "/";
+    })
+
+  } else if (sessionStorage.getItem("score") == 200) {
+    $('#winnerModal').modal({ backdrop: 'static', keyboard: false });
+    $(".winnerTitle").text("Winner! You just reached 100 points!");
+    $(".winnerBody").text("You may continue to play, or save your winning score now!");
+
+    $(".winnerClose").on("click", function () {
+      location.reload();
+    })
+  } else if (sessionStorage.getItem(name) == 8) {
+    window.location.href = "/";
+  } else {
+    location.reload();
+  }
+});
+
+// $(".answerClose").on("click", function () {
+//   //$("#categoryPage").show();
+//   //$("#questionPage").hide();
+//   if (sessionStorage.getItem(name) < 8) {
+//     location.reload();
+//   } else {
+//     window.location.href = "/";
+//   }
+// });
+
+
+$("#back").on("click", function (event) {
   event.preventDefault();
   window.location.href = "/";
+});
+
+$(".pointsClose").on("click", function () {
+  location.reload();
 })
 
-$(document).on("click", "#submitHighScoreModal", function(){
+$(document).on("click", ".submitHighScore", function () {
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
   var id = sessionStorage.getItem("playerID");
   $.ajax({
     method: "PUT",
     url: "/api/player/" + id,
-    data: {"highScore": sessionStorage.getItem("score")}
+    data: { "highScore": sessionStorage.getItem("score") }
   });
   $(".pointsBody").text("Thank you for submitting your high score!");
+  $(".winnerBody").text("Thank you for submitting your high score!");
   $("#submitHighScoreModal").hide();
 });
