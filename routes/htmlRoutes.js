@@ -33,7 +33,7 @@ module.exports = function (app) {
             var randomCats = [];
             var randomNums = [];
             while (randomCats.length < 9) {
-              var randomNum = Math.floor((Math.random() * 14) + 1);
+              var randomNum = Math.floor((Math.random() * 15));
 
               if (!randomNums.includes(randomNum)) {
                 randomNums.push(randomNum);

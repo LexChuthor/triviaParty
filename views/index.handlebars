@@ -2,7 +2,7 @@
 <div id="players">
     <h2 class="Player1 d-inline">Player 1:
     </h2><span id="score1"></span>
-    <button type="submit" id="submitHighScore">Submit Score</button>
+    <button type="submit" class="btn btn-light btn-lg outline" id="submitHighScore">Submit Score</button>
     {{!-- <h2 class="player2 d-inline">Player 2:
         <span id="score2"></span>
     </h2>
@@ -69,7 +69,7 @@
         {{/each}}
     </ul>
 
-    <button type="menu" id="showHighScores">Show High Scores</button>
+    <button type="menu" class="btn btn-light btn-lg outline" id="showHighScores">Show High Scores</button>
 
     <div class="modal fade" id="highScoresModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -108,29 +108,26 @@
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Please enter your name 😊</h5>
+            <div class="modal-header"">
+                <h5 class="modal-title" id="exampleModalLabel">Enter name to compete with your friends!</h5>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="playerName" placeholder="First name" style="color:orange"
-                            value="" required>
+                        <input type="text" class="form-control" id="playerName" placeholder="Enter name" style="color:orange" value="" required>
                     </div>
 
-                    <p style="color:orange">Click any icon to select your preference after entering your name.</p>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
+                    <h6>PLEASE SELECT DIFFICULTY LEVEL</h6>
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-md-4">
 
-                                <li class="modal-li">
-                                    <div class="ch-item">
-                                        <div class="ch-info">
-                                            <div class="ch-info-front2 ch-img-1"></div>
-                                            <div class="ch-info-back diffButton">
-                                                <h4 data-id="easy">Easy</h4>
-                                            </div>
-                                        </div>
+                        <li class="modal-li">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front2 ch-img-1"></div>
+                                    <div class="ch-info-back diffButton">
+                                            <h4 data-id="easy">Easy</h4>
                                     </div>
                                 </li>
                             </div>
@@ -165,7 +162,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal" id="log-in">Submit</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" id="log-in">READY!</button>
             </div>
         </div>
     </div>
