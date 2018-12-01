@@ -1,9 +1,8 @@
-
 <h1 class="display-4">Trivia Trove</h1>
 <div id="players">
     <h2 class="Player1 d-inline">Player 1:
-        <span id="score1"></span>
-    </h2>
+    </h2><span id="score1"></span>
+    <button type="submit" id="submitHighScore">Submit Score</button>
     {{!-- <h2 class="player2 d-inline">Player 2:
         <span id="score2"></span>
     </h2>
@@ -70,6 +69,33 @@
         {{/each}}
     </ul>
 
+    <button type="menu" id="showHighScores">Show High Scores</button>
+
+    <div class="modal fade" id="highScoresModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="scoresClose" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="highScoresBody">
+                        <table class="highScoreTable" style="width: 100%">
+                        <tr style="border-bottom: 2px solid black">
+                        <td>Place: </td>
+                        <td>Name: </td>
+                        <td>High Score: </td>
+                        </tr>
+                        </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </section>
 
@@ -88,53 +114,54 @@
             <div class="modal-body">
                 <form>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="playerName" placeholder="First name" style="color:orange" value="" required>
+                        <input type="text" class="form-control" id="playerName" placeholder="First name" style="color:orange"
+                            value="" required>
                     </div>
 
                     <p style="color:orange">Click any icon to select your preference after entering your name.</p>
-                   <div class="container">
-                       <div class="row">
-                           <div class="col-md-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
 
-                        <li class="modal-li">
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <div class="ch-info-front2 ch-img-1"></div>
-                                    <div class="ch-info-back diffButton">
-                                            <h4 data-id="easy">Easy</h4>
+                                <li class="modal-li">
+                                    <div class="ch-item">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front2 ch-img-1"></div>
+                                            <div class="ch-info-back diffButton">
+                                                <h4 data-id="easy">Easy</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </li>
                             </div>
-                        </li>
-                        </div>
-                        <div class="col-md-4">
-                        <li class="modal-li">
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <div class="ch-info-front2 ch-img-2"></div>
-                                    <div class="ch-info-back diffButton">
-                                            <h4 data-id="medium">Medium</h4>
+                            <div class="col-md-4">
+                                <li class="modal-li">
+                                    <div class="ch-item">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front2 ch-img-2"></div>
+                                            <div class="ch-info-back diffButton">
+                                                <h4 data-id="medium">Medium</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </li>
                             </div>
-                        </li>
-                        </div>
-                        <div class="col-md-4">
-                        <li class="modal-li">
-                            <div class="ch-item">
-                                <div class="ch-info">
-                                    <div class="ch-info-front2 ch-img-3"></div>
-                                    <div class="ch-info-back diffButton">
-                                            <h4 data-id="hard">Hard</h4>
+                            <div class="col-md-4">
+                                <li class="modal-li">
+                                    <div class="ch-item">
+                                        <div class="ch-info">
+                                            <div class="ch-info-front2 ch-img-3"></div>
+                                            <div class="ch-info-back diffButton">
+                                                <h4 data-id="hard">Hard</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </li>
                             </div>
-                        </li>
                         </div>
-                        </div>
-                        </div>
+                    </div>
 
-                   
+
                 </form>
             </div>
             <div class="modal-footer">
@@ -143,6 +170,24 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="pointsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pointsTitle" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="pointsClose" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="pointsBody"></p>
+                <button type="submit" id="submitHighScore">Submit Score</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <br>
 <br>
 

@@ -1,8 +1,21 @@
 $(document).ready(function () {
 
   console.log(sessionStorage.getItem("player"));
+  console.log(sessionStorage.getItem("difficulty"));
   $(".Player1").text(sessionStorage.getItem("player"));
-  $("#score1").text(sessionStorage.getItem("score"));
+  if (sessionStorage.getItem("score") === null) {
+    $("#score1").text(": 0");
+  } else {
+    $("#score1").text(": " +sessionStorage.getItem("score"));
+    if(parseInt(sessionStorage.getItem("score"))=== 100){
+
+    }
+  }  
+  if(sessionStorage.getItem("score") == 100){
+    $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+    $(".pointsTitle").text("You have reached 100 points!");
+    $(".pointsBody").text("You may continue to play, or save your winning score now!");
+  }
 });
 
 $(".question").on("click", function () {
@@ -15,6 +28,7 @@ $(".question").on("click", function () {
   console.log("qID: " + qID);
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
+    console.log(response);
     console.log(response.text);
     $("#questionText").text(response.text);
     $(".option1").attr("value", response.answer1);
@@ -37,7 +51,7 @@ $(document).on("click", ".submit", function (event) {
   var qID = $(this).data("id");
   var difficulty = sessionStorage.getItem("difficulty");
   console.log("qID: " + qID);
-  $('#answerModal').modal({backdrop: 'static', keyboard: false}); 
+  $('#answerModal').modal({ backdrop: 'static', keyboard: false });
 
   $.get("/api/questions/" + difficulty + "/" + qID, function (response) {
     console.log("Value: " + $("input[name=choices]:checked").val());
@@ -45,6 +59,13 @@ $(document).on("click", ".submit", function (event) {
     if ($("input[name=choices]:checked").val() === response.correctAnswer) {
       $(".answerTitle").text("Congratulations!");
       $(".answerBody").text(`${response.correctAnswer} was the correct answer!`);
+      var score = sessionStorage.getItem("score");
+      if (score === null) {
+        score = 0;
+      }
+      score = parseInt(score);
+      score += 100;
+      sessionStorage.setItem("score", score.toString());
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
@@ -67,5 +88,20 @@ $(document).on("click", ".submit", function (event) {
     $("#questionPage").hide();
     location.reload();
   });
+});
 
+$("#back").on("click", function(){
+  event.preventDefault();
+  window.location.href = "/";
+})
+
+$(document).on("click", "#submitHighScore", function(){
+  $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+  var id = sessionStorage.getItem("playerID");
+  $.ajax({
+    method: "PUT",
+    url: "/api/player/" + id,
+    data: {"highScore": sessionStorage.getItem("score")}
+  });
+  $(".pointsBody").text("Thank you for submitting your high score!");
 });

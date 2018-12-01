@@ -1,16 +1,17 @@
-<div class="body {{background}}-background" >
+<div class="body {{background}}-background">
     <h1>Trivia Trove</h1>
     <div id="players">
         <h2 class="Player1 d-inline">Player 1:
-            <span id="score1"></span>
         </h2>
+        <span id="score1"></span>
+         <button type="submit" id="submitHighScore">Submit Score</button>
         {{!--
         <h2 class="player2 d-inline">Player 2:
             <span id="score2"></span>
         </h2>
         <h2 class="player3 d-inline">Player 3:
             <span id="score3"></span>
-        </h2> 
+        </h2>
         style="background-image: url('./images/{{background}}-background.jpg')"
         --}}
     </div>
@@ -40,6 +41,7 @@
             {{/each}}
         </ul>
 
+        <button type="menu" id="back">Back to Categories</button>
 
     </section>
 
@@ -83,19 +85,36 @@
 </div>
 
 <div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span class="answerClose" aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="answerBody"></p>
-                </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title answerTitle" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="answerClose" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="answerBody"></p>
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="pointsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pointsTitle" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="pointsClose" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="pointsBody"></p>
+                <button type="submit" id="submitHighScore">Submit Score</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="/js/category.js"></script>
