@@ -144,6 +144,37 @@ module.exports = function (app) {
 
   });
 
+
+  
+  // app.get("/table", function (req, res) {
+
+  //   var questionArray = [];
+  //   var QIndex = 1;
+  //   var findQuestions = function () {
+  //     db.Question.findAll({
+  //       where: {
+  //         CategoryID: QIndex
+  //       }
+  //     }).then(function (dbQuestions) {
+        
+  //       console.log("Category " + QIndex);
+  //       for(var i = 0; i < dbQuestions.length; i++){
+  //         questionArray.push({
+  //         question: dbQuestions[i].dataValues.text,
+  //         answer1: dbQuestions[i].dataValues.answer1,
+
+  //         })
+  //       }
+        
+  //       QIndex++;
+  //       if (QIndex < 16) {
+  //         findQuestions();
+  //       }
+  //     });
+  //   }
+  //   findQuestions();
+  // });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.Question.findOne({ where: { id: req.params.id } }).then(function (

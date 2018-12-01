@@ -6,12 +6,14 @@ $(document).ready(function () {
   if (sessionStorage.getItem("score") === null) {
     $("#score1").text(": 0");
   } else {
-    $("#score1").text(": " +sessionStorage.getItem("score"));
+    $("#score1").text(": " + sessionStorage.getItem("score"));
     if(parseInt(sessionStorage.getItem("score"))=== 100){
 
     }
   }  
 });
+
+var name = $(".currentCat").text() + "Answered";
 
 $(".question").on("click", function () {
   $("#categoryPage").hide();
@@ -40,11 +42,13 @@ $(".question").on("click", function () {
   });
 });
 
+var qAnswered = sessionStorage.getItem(name);
 
 $(document).on("click", ".submit", function (event) {
   event.preventDefault();
   var qID = $(this).data("id");
   var difficulty = sessionStorage.getItem("difficulty");
+  qAnswered++;
   console.log("qID: " + qID);
   $('#answerModal').modal({ backdrop: 'static', keyboard: false });
 
@@ -82,16 +86,21 @@ $(document).on("click", ".submit", function (event) {
   }).then(
     function (response) {
       console.log(response);
+      sessionStorage.setItem(name, qAnswered);
     });
 
   $(".answerClose").on("click", function () {
-    // $("#questionPage").hide();
-    // $("#categoryPage").show();
+    //$("#categoryPage").show();
+    //$("#questionPage").hide();
+    if(sessionStorage.getItem(name) < 5){
     location.reload();
+    } else {
+      window.location.href = "/";
+    }
   });
 });
 
-$("#back").on("click", function(){
+$("#back").on("click", function(event){
   event.preventDefault();
   window.location.href = "/";
 })
