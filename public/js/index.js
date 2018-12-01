@@ -7,10 +7,26 @@ $(document).ready(function () {
   console.log(sessionStorage.getItem("player"));
   if (sessionStorage.getItem("player") === null) {
     setTimeout(function () { showModal(); }, 2000);
+
+    let id = 9;
+    for (var i = 1; i < id; i++) {
+      $.ajax({
+        method: "PUT",
+        url: "/api/questions/" + i,
+        data: { "answered": false }
+      }).then(function () {
+        console.log("updated!");
+      });
+    }
+
     $("#log-in").prop("disabled", true);
   } else {
     $(".Player1").text(sessionStorage.getItem("player"));
-    $("#score1").text(sessionStorage.getItem("score"));
+    if (sessionStorage.getItem("score") === null) {
+      $("#score1").text(": 0");
+    } else {
+      $("#score1").text(":" + sessionStorage.getItem("score"));
+    }
   }
 });
 
@@ -41,16 +57,60 @@ $(".diffButton").on("click", function () {
     $.post("/api/player", {
       player_name: playerName,
       difficulty: difficulty
-    }).then(function () {
+    }, function (response) {
       console.log("something happened");
+      console.log(response);
+      sessionStorage.setItem("playerID", response.id);
       location.reload();
     });
 
   });
-
 });
 
+$(document).on("click", "#submitHighScore", function () {
+  $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+  var id = sessionStorage.getItem("playerID");
+  $.ajax({
+    method: "PUT",
+    url: "/api/player/" + id,
+    data: { "highScore": sessionStorage.getItem("score") }
+  });
+  $(".pointsBody").text("Thank you for submitting your high score!");
+});
 
+$("#showHighScores").on("click", function () {
+  $('#highScoresModal').modal({ backdrop: 'static', keyboard: false });
+  var highScores = [];
+  $.get("/api/player", function (response) {
+    for (var i = 0; i < response.length; i++) {
+      highScores.push({
+        name: response[i].player_name,
+        highScore: parseInt(response[i].highScore)
+      });
+    }
+    highScores.sort(compare);
+    for (var j = 0; j < 10; j++) {
+      $(".highScoreTable").append(`
+    <tr style="border-bottom: 2px solid black">
+      <td>${j + 1}</td>
+      <td>${highScores[j].name}</td>
+      <td>${highScores[j].highScore}</td>
+    </tr>
+  `);
+    }
+  });
+});
+
+function compare(a, b) {
+
+  const valA = a.highScore;
+  const valB = b.highScore;
+
+  if (valA > valB) return -1;
+  if (valB < valA) return 1;
+
+  return 0;
+}
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
