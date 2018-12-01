@@ -11,11 +11,6 @@ $(document).ready(function () {
 
     }
   }  
-  if(sessionStorage.getItem("score") == 100){
-    $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
-    $(".pointsTitle").text("You have reached 100 points!");
-    $(".pointsBody").text("You may continue to play, or save your winning score now!");
-  }
 });
 
 var name = $(".currentCat").text() + "Answered";
@@ -70,6 +65,12 @@ $(document).on("click", ".submit", function (event) {
       score = parseInt(score);
       score += 100;
       sessionStorage.setItem("score", score.toString());
+      if(sessionStorage.getItem("score") == 100){
+        $("#answerModal").modal("hide");
+        $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+        $(".pointsTitle").text("You have reached 100 points!");
+        $(".pointsBody").text("You may continue to play, or save your winning score now!");
+      }
     } else {
       $(".answerTitle").text("Sorry!");
       $(".answerBody").text(`The correct answer was actually ${response.correctAnswer}.`);
@@ -77,7 +78,7 @@ $(document).on("click", ".submit", function (event) {
     $("input[name=choices]:checked").prop('checked', false);
     $(".submitRow").empty();
     $(".submitRow").append("<button class='submit' type='submit'>Submit</button>");
-  })
+  });
 
   $.ajax("/api/questions/" + qID, {
     type: "PUT",
