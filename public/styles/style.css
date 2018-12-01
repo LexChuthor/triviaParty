@@ -168,7 +168,9 @@ margin: 0 auto;
 cursor: pointer;
 }
 
-
+h5{
+  padding-right: 30px;
+}
 
 .currentCat{
 background-color:rgba(164, 198, 226, 0.2);;

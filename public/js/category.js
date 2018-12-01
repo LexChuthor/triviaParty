@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+ 
   console.log(sessionStorage.getItem("player"));
   console.log(sessionStorage.getItem("difficulty"));
   $(".Player1").text(sessionStorage.getItem("player"));
