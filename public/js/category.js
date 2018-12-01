@@ -92,7 +92,7 @@ $(document).on("click", ".submit", function (event) {
   $(".answerClose").on("click", function () {
     //$("#categoryPage").show();
     //$("#questionPage").hide();
-    if(sessionStorage.getItem(name) < 5){
+    if(sessionStorage.getItem(name) < 8){
     location.reload();
     } else {
       window.location.href = "/";
@@ -105,7 +105,7 @@ $("#back").on("click", function(event){
   window.location.href = "/";
 })
 
-$(document).on("click", "#submitHighScore", function(){
+$(document).on("click", "#submitHighScoreModal", function(){
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
   var id = sessionStorage.getItem("playerID");
   $.ajax({
@@ -114,4 +114,5 @@ $(document).on("click", "#submitHighScore", function(){
     data: {"highScore": sessionStorage.getItem("score")}
   });
   $(".pointsBody").text("Thank you for submitting your high score!");
+  $("#submitHighScoreModal").hide();
 });
