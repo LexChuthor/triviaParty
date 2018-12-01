@@ -36,6 +36,8 @@ $("#log-in").on("click", function() {
   $(".Player1").text(playerName);
   sessionStorage.setItem("player", playerName);
   sessionStorage.setItem("difficulty", difficulty);
+  sessionStorage.setItem("HistoryAnswered", 0);
+  sessionStorage.setItem("MusicAnswered", 0);
   $.post("/api/player", {
     player_name: playerName,
     difficulty: difficulty
@@ -44,7 +46,6 @@ $("#log-in").on("click", function() {
     location.reload();
   });
   
-});
 });
 
 
