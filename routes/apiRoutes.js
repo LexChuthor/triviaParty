@@ -31,7 +31,6 @@ module.exports = function(app) {
       res.json(dbQuestion);
     });
   });
-
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Question.create(req.body).then(function(dbQuestion) {
@@ -48,16 +47,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/player", function(req, res){
+    db.Player.findAll({}).then(function(players){
+      res.json(players);
+    });
+  });
+
   app.post("/api/player", function(req, res) {
     db.Player.create(req.body).then(function(player) {
       res.json(player);
     });
   });
 
-  app.put("/api/player", function(req, res) {
+  app.put("/api/player/:id", function(req, res) {
     db.Player.update(req.body, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(playerUp) {
       res.json(playerUp);
