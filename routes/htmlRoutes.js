@@ -147,7 +147,7 @@ module.exports = function (app) {
               questionNum++;
             }
           }
-        } else {
+        } else if (unansweredQuestions.length === 1) {
           var lastQuestion = unansweredQuestions[0];
           randomQs.push(
             {
@@ -201,16 +201,6 @@ module.exports = function (app) {
   //   findQuestions();
   // });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Question.findOne({ where: { id: req.params.id } }).then(function (
-      dbQuestion
-    ) {
-      res.render("example", {
-        example: dbQuestion
-      });
-    });
-  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
