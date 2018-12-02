@@ -127,7 +127,7 @@ module.exports = function (app) {
             console.log("The second if is firing.");
             console.log(randomNums);
 
-            if (!dbQuestions[randomNum].answered
+            if (!unansweredQuestions[randomNum].answered
             //&& !randomNums.includes(randomNum)
             ) {
               randomNums.push(randomNum);
