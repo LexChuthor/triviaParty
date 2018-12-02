@@ -89,12 +89,16 @@ module.exports = function (app) {
         var randomQs = [];
         var randomNums = [];
         var questionNum = 1;
+        console.log("Number of Questions Left: " + unansweredQuestions.length);
         if (unansweredQuestions.length > 5) {
           while (randomQs.length < 5) {
-             randomNum = Math.floor(Math.random() * (unansweredQuestions.length + 1));
-            
+             randomNum = Math.floor(Math.random() * unansweredQuestions.length);
+            console.log("The first if is firing.");
+            console.log(randomNums);
 
-            if (!randomNums.includes(randomNum) && !unansweredQuestions[randomNum].answered) {
+            if (!dbQuestions[randomNum].answered
+              //&& !randomNums.includes(randomNum)
+              ) {
              
               randomNums.push(randomNum);
               var random = unansweredQuestions[randomNum];
@@ -115,12 +119,17 @@ module.exports = function (app) {
           }
           console.log("RandomQs");
           console.log(randomQs);
-        } else {
+        } else if (unansweredQuestions.length <= 5 && unansweredQuestions.length > 1)  {
           while (randomQs.length < unansweredQuestions.length) {
             
             randomNum = Math.floor(Math.random() * unansweredQuestions.length);
 
-            if (!randomNums.includes(randomNum) && !unansweredQuestions[randomNum].answered) {
+            console.log("The second if is firing.");
+            console.log(randomNums);
+
+            if (!dbQuestions[randomNum].answered
+            //&& !randomNums.includes(randomNum)
+            ) {
               randomNums.push(randomNum);
               var random = unansweredQuestions[randomNum];
               randomQs.push(
@@ -138,7 +147,21 @@ module.exports = function (app) {
               questionNum++;
             }
           }
-        }
+        } else {
+          var lastQuestion = unansweredQuestions[0];
+          randomQs.push(
+            {
+              id: lastQuestion.id,
+              question: lastQuestion.text,
+              answer1: lastQuestion.answer1,
+              answer2: lastQuestion.answer2,
+              answer3: lastQuestion.answer3,
+              answer4: lastQuestion.answer4,
+              correctAnswer: lastQuestion.correctAnswer,
+              questionNumber: questionNum,
+              img: dbCategory.image
+            });
+        };
         console.log(randomQs);
         res.render("category", { questions: randomQs, currentCat: [dbCategory.category_name], background: [dbCategory.image] });
       });

@@ -130,7 +130,7 @@ $("#back").on("click", function (event) {
 
 $(".pointsClose").on("click", function () {
   location.reload();
-})
+});
 
 $(document).on("click", ".submitHighScore", function () {
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });

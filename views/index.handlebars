@@ -2,7 +2,7 @@
 <div id="players">
     <h2 class="Player1 d-inline">Player:
     </h2><span id="score1"></span>
-    <button type="submit" class="btn btn-light btn-lg outline" id="submitHighScore">Submit Score</button>
+    <button type="submit" class="btn btn-light btn-lg outline md-trigger md-setperspective submitHighScore" data-modal="pointsModal">Submit Score</button>
     {{!-- <h2 class="player2 d-inline">Player 2:
         <span id="score2"></span>
     </h2>
@@ -169,18 +169,16 @@
     </div>
 </div>
 
-<div class="modal fade" id="pointsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title pointsTitle" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="pointsClose" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="pointsBody"></p>
-            </div>
+<div class="md-modal md-effect-18" id="pointsModal">
+    <div class="md-content">
+        <div class="modal-header">
+            <h5 class="modal-title pointsTitle" id="exampleModalLabel"></h5>
+            <button type="button" class="close pointsClose md-close" data-dismiss="modal" aria-label="Close">
+                <span class="pointsClose" aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p class="pointsBody"></p>
         </div>
     </div>
 </div>
@@ -189,3 +187,5 @@
 <br>
 
 <script src="/js/index.js"></script>
+<script type="text/javascript" src="/js/classie.js"></script>
+<script type="text/javascript" src="/js/modalEffects.js"></script>

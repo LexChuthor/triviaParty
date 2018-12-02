@@ -8,7 +8,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("player") === null) {
     setTimeout(function () { showModal(); }, 2000);
 
-    let id = 11;
+    let id = 14;
     for (var i = 1; i < id; i++) {
       $.ajax({
         method: "PUT",
@@ -127,7 +127,7 @@ $(".diffButton").on("click", function () {
   });
 });
 
-$(document).on("click", "#submitHighScore", function () {
+$(document).on("click", ".submitHighScore", function () {
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
   var id = sessionStorage.getItem("playerID");
   $.ajax({
@@ -139,6 +139,10 @@ $(document).on("click", "#submitHighScore", function () {
 });
 
 $("#randomize").on("click", function(){
+  location.reload();
+});
+
+$(".pointsClose").on("click", function () {
   location.reload();
 })
 
