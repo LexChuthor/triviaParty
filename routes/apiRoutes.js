@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all categories from the Categories tables, including the related questions of each
   app.get("/api/categories", function(req, res) {
     db.Category.findAll({
       include: [db.Question]
@@ -10,6 +10,7 @@ module.exports = function(app) {
     });
   });
 
+  //Gets one question from the Questions table based on the question id and difficulty level fed to it in the route
   app.get("/api/questions/:difficulty/:id", function(req, res) {
     db.Question.findOne({
       where: {
@@ -23,6 +24,7 @@ module.exports = function(app) {
     });
   });
 
+  //Updates question record based on its id from the route
   app.put("/api/questions/:id", function(req, res) {
     db.Question.update(req.body, {
       where: {
@@ -32,34 +34,22 @@ module.exports = function(app) {
       res.json(dbQuestion);
     });
   });
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Question.create(req.body).then(function(dbQuestion) {
-      res.json(dbQuestion);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Question.destroy({ where: { id: req.params.id } }).then(function(
-      dbQuestion
-    ) {
-      res.json(dbQuestion);
-    });
-  });
-
+  
+  //Gets all players from the Players table
   app.get("/api/player", function(req, res){
     db.Player.findAll({}).then(function(players){
       res.json(players);
     });
   });
 
+  //Creates new player record in the Players table
   app.post("/api/player", function(req, res) {
     db.Player.create(req.body).then(function(player) {
       res.json(player);
     });
   });
 
+  //Updates player record based on its id from the route
   app.put("/api/player/:id", function(req, res) {
     db.Player.update(req.body, {
       where: {
@@ -70,5 +60,15 @@ module.exports = function(app) {
     });
   });
 };
+
+
+// // Delete an example by id
+  // app.delete("/api/examples/:id", function(req, res) {
+  //   db.Question.destroy({ where: { id: req.params.id } }).then(function(
+  //     dbQuestion
+  //   ) {
+  //     res.json(dbQuestion);
+  //   });
+  // });
 
 
