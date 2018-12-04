@@ -40,4 +40,45 @@ VALUES ("Which of these albums was not released by the Beatles?", "Abbey Road", 
 -- Animals: 6, Plants: 7, Weather: 8
 
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("Which Civil War general ran against Lincoln for President?", "Grant", "Lee", "McClellan", "Burnside", "McClellan", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5);
+VALUES ("What flower was serenaded in the 1965 film The Sound of Music?", "Rose", "Lily", "Edelweiss", "Sunflower", "Edelweiss", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("A plant's fruits are its ripened what?", "Ovaries", "Pistils", "Anthers", "Seeds", "Ovaries", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these plants does NOT grow from a bulb?", "Lily", "Daffodil", "Orchid", "Amaryllis", "Orchid", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Where is the biggest concentration of diverse plant species in the world?", "Indonesia", "Amazon Rainforest", "Congo River Basin", "India", "Amazon Rainforest", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Pollen is created in what flower structure?", "Stamen", "Pistil", "Stigma", "Sepal", "Stamen", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these plants creates flowers but no actual leaves?", "Cactus", "Bamboo", "Juniper", "Kelp", "Cactus", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+
+
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What element essential for healthy plant growth is returned to the soil by bacteria on certain plants' roots?", "Carbon Dioxide", "Oxygen", "Fluorine", "Nitrogen", "Nitrogen", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What kind of wood was Noah's Ark made from?", "Teak", "Balsa", "Gopher Wood", "Cedar", "Gopher Wood", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these flowers feature leaves called bracts rather than petals?", "Daffodil", "Dogwood", "Pansy", "Magnolia", "Dogwood", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("If an X is carved into a tree trunk and the tree is allowed to grow for 100 years, where will the X be relative to its original position?", "5 feet higher", "1 foot higher", "5 inches higher", "The same place", "The same place", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these vegetables is in the same family as Queen Anne's Lace?", "Corn", "Carrot", "Potato", "Cabbage", "Carrot", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these trees is considered a hardwood?", "Pine", "Cedar", "Maple", "Hickory", "Maple", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these is not a legume?", "Peanut", "Carob", "Tamarind", "Vanilla", "Vanilla", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
