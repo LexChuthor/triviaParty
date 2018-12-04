@@ -37,3 +37,7 @@ VALUES ("Which of these albums was not released by the Beatles?", "Abbey Road", 
 -- Port - 3306
 -- Database - tqps27hovjvizqxp
 
+-- Animals: 6, Plants: 7, Weather: 8
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which Civil War general ran against Lincoln for President?", "Grant", "Lee", "McClellan", "Burnside", "McClellan", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5);

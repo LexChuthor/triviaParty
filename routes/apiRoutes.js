@@ -34,6 +34,18 @@ module.exports = function(app) {
       res.json(dbQuestion);
     });
   });
+
+  //Updates each question based on their difficulty and id number from the route
+  app.put("/api/questions/:difficulty/:id", function(req, res) {
+    db.Question.update(req.body, {
+      where: {
+        id: req.params.id,
+        difficulty: req.params.difficulty
+      }
+    }).then(function(dbQuestion) {
+      res.json(dbQuestion);
+    });
+  });
   
   //Gets all players from the Players table
   app.get("/api/player", function(req, res){
