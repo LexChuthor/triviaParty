@@ -62,4 +62,21 @@ When one of the category circles' links is clicked, the category.handlebars file
 
 Clicking the submit button triggers a modal with a special spin effect from Effekt.css site for CSS transitions and animations (http://h5bp.github.io/Effeckt.css/modals.html), which was found through CSSDB.co, a collection of CSS libraries (http://cssdb.co/). The submit changes that question's "answered" value in the database to "true," changes the modal's text to display the answer and give a "Congratulations" or "Sorry" message depending on whether it was answered correctly, increases the score (stored in sessionStorage) by 5 if the answer was correct, and reloads the page to again show the question circles and update the score at the top.
 
-A maximum of five question circles are displayed, corresponding to randomly generated unanswered questions from the database, but if there are fewer than five unanswered questions in that category, then the number of question circles dwindles to four, three, two, and one as they are answered. Once the last question is answered and its modal is closed, the page diverts back to the index page, and that category's circle replaces its link with a "Completed" message.
+A maximum of five question circles are displayed, corresponding to randomly generated unanswered questions from the database, but if there are fewer than five unanswered questions in that category, then the number of question circles dwindles to four, three, two, and one as they are answered. Once the last (eighth) question is answered and its modal is closed, the page diverts back to the index page, and that category's circle replaces its link with a "Completed" message.
+
+When the player's score reaches 100, a congratulatory modal opens with a button allowing them to submit their score to the database as their high score. Closing the modal allows them to keep playing if they wish.
+
+Clicking the "Submit Score" button at the top submits the current player's score to be recorded as their high score in the Players table, and a modal using an animation from Effekt.css thanks the user for submitting their score. When the "Show High Scores" button at the bottom is clicked, a modal displays the ten highest scores in a simple table, along with the player's name and placement in the ranking. Clicking the "Randomize" button at the bottom merely reloads the page to generate newly random categories on the index page.
+
+## Behind the Scenes
+
+The following values are stored in sessionStorage for as long as the user's window is open:
+
+* The chosen difficulty
+* The player's name
+* The player's id for updating their table values
+* The ever-increasing score
+* A separate tally for every category, formatted as ArtAnswered, FilmAnswered, etc.
+  When this value reaches 8 (the number of questions in each category per difficulty level), that is the condition for indicating that category is "Completed."
+
+  Any time something changes in the database, the page is typically reloaded to reflect those changes.
