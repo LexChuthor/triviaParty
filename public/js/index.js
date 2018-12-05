@@ -1,34 +1,64 @@
+//Function for displaying modal, such that it can't be closed by clicking outside the modal or hitting escape, only with the close button
 function showModal() {
   $('#signInModal').modal({ backdrop: 'static', keyboard: false });
 };
 
+var difficulty;
+
 $(document).ready(function () {
-  // Show After 2 Seconds
   console.log(sessionStorage.getItem("player"));
+
+  // Shows modal after 2 Seconds
   if (sessionStorage.getItem("player") === null) {
     setTimeout(function () { showModal(); }, 2000);
 
-    let id = 14;
-    for (var i = 1; i < id; i++) {
-      $.ajax({
-        method: "PUT",
-        url: "/api/questions/" + i,
-        data: { "answered": false }
-      }).then(function () {
-        console.log("updated!");
-      });
-    }
-
+    //Disables log-in button at beginning of game
     $("#log-in").prop("disabled", true);
+
+    //In opening modal, when difficulty button is pressed
+    $(".diffButton").on("click", function () {
+      //Button's id (easy, medium, or hard) is attached to difficulty variable
+      difficulty = $(this).children().data("id");
+      //If the player has already entered their name, the log-in button is enabled
+      if ($("#playerName").val()) {
+        $("#log-in").prop("disabled", false);
+      }
+      //When a name is entered in the playerName field, the log-in button is enabled if a difficulty button has been already pressed
+      $("#playerName").on("input", function () {
+        if (difficulty) {
+          $("#log-in").prop("disabled", false);
+        }
+      });
+
+      let id = 14;
+      //This id number depends on the number of questions in the database, resetting all those of the chosen difficulty to "unanswered" status if there's a new player present
+      //14 was used in the production and testing, but the deployed version uses 290
+      for (var i = 1; i < id; i++) {
+        console.log("Difficulty: " + difficulty);
+        console.log("ID: " + id);
+        $.ajax({
+          method: "PUT",
+          url: "/api/questions/" + difficulty + "/" + i,
+          data: { "answered": false }
+        }).then(function () {
+          console.log("updated!");
+        });
+      }
+
+    });
   } else {
+    //Displays stored player name at the top of the page
     $(".Player1").text(sessionStorage.getItem("player"));
+    //If there is no score, then 0 is displayed
     if (sessionStorage.getItem("score") === null) {
       $("#score1").text(": 0");
     } else {
+      //If there is a score in sessionStorage, it is displayed next to the player name
       $("#score1").text(":" + sessionStorage.getItem("score"));
     }
   }
 
+  //Replaces each category's name text with the word "Completed" (thus removing link) if 8 questions have been answered in that category
   if (sessionStorage.getItem("HistoryAnswered") == 8) {
     $(".History").empty().append(`<br><h3>Completed</h3>`);
   };
@@ -76,79 +106,112 @@ $(document).ready(function () {
   if (sessionStorage.getItem("ArtAnswered") == 8) {
     $(".Art").empty().append(`<br><h3>Completed</h3>`);
   };
+
+  if (sessionStorage.getItem("PlantsAnswered") == 8) {
+    $(".Plants").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if (sessionStorage.getItem("WeatherAnswered") == 8) {
+    $(".Weather").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if (sessionStorage.getItem("FoodAnswered") == 8) {
+    $(".Food").empty().append(`<br><h3>Completed</h3>`);
+  };
 });
 
-var difficulty;
+// var difficulty;
 
-$(".diffButton").on("click", function () {
-  difficulty = $(this).children().data("id");
-  if ($("#playerName").val()) {
-    $("#log-in").prop("disabled", false);
-  }
+// //In opening modal, when difficulty button is pressed
+// $(".diffButton").on("click", function () {
+//   //Button's id (easy, medium, or hard) is attached to difficulty variable
+//   difficulty = $(this).children().data("id");
+//   //If the player has already entered their name, the log-in button is enabled
+//   if ($("#playerName").val()) {
+//     $("#log-in").prop("disabled", false);
+//   }
+//   //When a name is entered in the playerName field, the log-in button is enabled if a difficulty button has been already pressed
+//   $("#playerName").on("input", function () {
+//     if (difficulty) {
+//       $("#log-in").prop("disabled", false);
+//     }
+//   });
 
-  $("#playerName").on("input", function () {
-    if (difficulty) {
-      $("#log-in").prop("disabled", false);
-    }
+//When the log-in button is pressed (after being enabled)
+$("#log-in").on("click", function () {
+  event.preventDefault();
+  //The typed player name is displayed at the top of the page
+  var playerName = $("#playerName")
+    .val()
+    .trim();
+  $(".Player1").text(playerName);
+  //The player name and difficulty are stored in sessionStorage
+  sessionStorage.setItem("player", playerName);
+  sessionStorage.setItem("difficulty", difficulty);
+
+  //Placeholders are set for keeping track of how many questions have been answered in each category
+  sessionStorage.setItem("ArtAnswered", 0);
+  sessionStorage.setItem("FilmAnswered", 0);
+  sessionStorage.setItem("TelevisionAnswered", 0);
+  sessionStorage.setItem("AnimeAnswered", 0);
+  sessionStorage.setItem("TechnologyAnswered", 0);
+  sessionStorage.setItem("GeographyAnswered", 0);
+  sessionStorage.setItem("SportsAnswered", 0);
+  sessionStorage.setItem("HistoryAnswered", 0);
+  sessionStorage.setItem("MusicAnswered", 0);
+  sessionStorage.setItem("Video GamesAnswered", 0);
+  sessionStorage.setItem("AnimalsAnswered", 0);
+  sessionStorage.setItem("BooksAnswered", 0);
+  sessionStorage.setItem("PlantsAnswered", 0);
+  sessionStorage.setItem("WeatherAnswered", 0);
+  sessionStorage.setItem("FoodAnswered", 0);
+
+  //New player is posted with name and difficulty, storing the new player's id in sessionStorage as well and reloading the page to display changes
+  $.post("/api/player", {
+    player_name: playerName,
+    difficulty: difficulty
+  }, function (response) {
+    console.log("something happened");
+    console.log(response);
+    sessionStorage.setItem("playerID", response.id);
+    location.reload();
   });
 
-  $("#log-in").on("click", function () {
-    event.preventDefault();
-    var playerName = $("#playerName")
-      .val()
-      .trim();
-    $(".Player1").text(playerName);
-    sessionStorage.setItem("player", playerName);
-    sessionStorage.setItem("difficulty", difficulty);
-
-    sessionStorage.setItem("ArtAnswered", 0);
-    sessionStorage.setItem("FilmAnswered", 0);
-    sessionStorage.setItem("TelevisionAnswered", 0);
-    sessionStorage.setItem("AnimeAnswered", 0);
-    sessionStorage.setItem("TechnologyAnswered", 0);
-    sessionStorage.setItem("GeographyAnswered", 0);
-    sessionStorage.setItem("SportsAnswered", 0);
-    sessionStorage.setItem("HistoryAnswered", 0);
-    sessionStorage.setItem("MusicAnswered", 0);
-    sessionStorage.setItem("Video GamesAnswered", 0);
-    sessionStorage.setItem("AnimalsAnswered", 0);
-    sessionStorage.setItem("BooksAnswered", 0);
-
-    $.post("/api/player", {
-      player_name: playerName,
-      difficulty: difficulty
-    }, function (response) {
-      console.log("something happened");
-      console.log(response);
-      sessionStorage.setItem("playerID", response.id);
-      location.reload();
-    });
-
-  });
 });
 
+
+//When high score submit button is pressed
 $(document).on("click", ".submitHighScore", function () {
+  //The points modal is displayed, such that only the close button can close it
   $('#pointsModal').modal({ backdrop: 'static', keyboard: false });
+
+  //Player id is grabbed from sessionStorage and used to update that player's high score value
   var id = sessionStorage.getItem("playerID");
   $.ajax({
     method: "PUT",
     url: "/api/player/" + id,
     data: { "highScore": sessionStorage.getItem("score") }
   });
+  //Displays modal text
   $(".pointsBody").text("Thank you for submitting your high score!");
 });
 
-$("#randomize").on("click", function(){
+//Page is reloaded when randomize button is clicked
+$("#randomize").on("click", function () {
   location.reload();
 });
 
+//Page is reloaded when pointsModal is closed, in order to display change
 $(".pointsClose").on("click", function () {
   location.reload();
-})
+});
 
+//When button is clicked for high scores list
 $("#showHighScores").on("click", function () {
+  //High scores modal is displayed, such that only clicking the close button will close it
   $('#highScoresModal').modal({ backdrop: 'static', keyboard: false });
   var highScores = [];
+  //Gets all player names and high scores and pushes them to an array
   $.get("/api/player", function (response) {
     for (var i = 0; i < response.length; i++) {
       highScores.push({
@@ -156,7 +219,9 @@ $("#showHighScores").on("click", function () {
         highScore: parseInt(response[i].highScore)
       });
     }
+    //Sorts highScores array from highest to least
     highScores.sort(compare);
+    //Loops through the first ten objects of the highScores array and adds them to a table in the modal
     for (var j = 0; j < 10; j++) {
       $(".highScoreTable").append(`
     <tr style="border-bottom: 2px solid black">
@@ -169,6 +234,7 @@ $("#showHighScores").on("click", function () {
   });
 });
 
+//Compare function for sorting highScores from highest to least
 function compare(a, b) {
 
   const valA = a.highScore;
