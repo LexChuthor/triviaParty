@@ -35,7 +35,7 @@ The database contains three tables with set columns:
 
 * Questions (many-to-one relationship with Categories)
 
-    * An automatically generate question id
+    * An automatically generated question id
     * Text of the actual question
     * The first potential answer
     * The second potential answer
@@ -48,6 +48,7 @@ The database contains three tables with set columns:
 
 * Players
 
+    * An automatically generated player id
     * The player's name
     * The player's chosen difficulty level ("easy", "medium", or "hard")
     * The player's high score (set with a default value of 0)
@@ -60,7 +61,7 @@ The first page (index.handlebars) displays three rows of three categories, which
 
 When one of the category circles' links is clicked, the category.handlebars file is loaded for that particular category, changing the background based on the topic, displaying the category name at the top, and generating five question circles. When one of these circles is clicked, the list of circles is hidden, and the question itself is shown, along with the four answer options and a submit button.
 
-Clicking the submit button triggers a modal with a special spin effect from Effekt.css site for CSS transitions and animations (http://h5bp.github.io/Effeckt.css/modals.html), which was found through CSSDB.co, a collection of CSS libraries (http://cssdb.co/). The submit changes that question's "answered" value in the database to "true," changes the modal's text to display the answer and give a "Congratulations" or "Sorry" message depending on whether it was answered correctly, increases the score (stored in sessionStorage) by 5 if the answer was correct, and reloads the page to again show the question circles and update the score at the top.
+Clicking the submit button triggers a modal with a special spin effect from Effekt.css, a site for CSS transitions and animations (http://h5bp.github.io/Effeckt.css/modals.html), which was found through CSSDB.co, a collection of CSS libraries (http://cssdb.co/). The submit changes that question's "answered" value in the database to "true," changes the modal's text to display the answer and give a "Congratulations" or "Sorry" message depending on whether it was answered correctly, increases the score (stored in sessionStorage) by 5 if the answer was correct, and reloads the page to again show the question circles and update the score at the top.
 
 A maximum of five question circles are displayed, corresponding to randomly generated unanswered questions from the database, but if there are fewer than five unanswered questions in that category, then the number of question circles dwindles to four, three, two, and one as they are answered. Once the last (eighth) question is answered and its modal is closed, the page diverts back to the index page, and that category's circle replaces its link with a "Completed" message.
 

@@ -29,23 +29,8 @@ $(document).ready(function () {
           $("#log-in").prop("disabled", false);
         }
       });
-
-      let id = 14;
-      //This id number depends on the number of questions in the database, resetting all those of the chosen difficulty to "unanswered" status if there's a new player present
-      //14 was used in the production and testing, but the deployed version uses 290
-      for (var i = 1; i < id; i++) {
-        console.log("Difficulty: " + difficulty);
-        console.log("ID: " + id);
-        $.ajax({
-          method: "PUT",
-          url: "/api/questions/" + difficulty + "/" + i,
-          data: { "answered": false }
-        }).then(function () {
-          console.log("updated!");
-        });
-      }
-
     });
+    
   } else {
     //Displays stored player name at the top of the page
     $(".Player1").text(sessionStorage.getItem("player"));
@@ -165,6 +150,21 @@ $("#log-in").on("click", function () {
   sessionStorage.setItem("PlantsAnswered", 0);
   sessionStorage.setItem("WeatherAnswered", 0);
   sessionStorage.setItem("FoodAnswered", 0);
+
+  let id = 14;
+  //This id number depends on the number of questions in the database, resetting all those of the chosen difficulty to "unanswered" status if there's a new player present
+  //14 was used in the production and testing, but the deployed version uses 290
+  for (var i = 1; i < id; i++) {
+    console.log("Difficulty: " + difficulty);
+    console.log("ID: " + id);
+    $.ajax({
+      method: "PUT",
+      url: "/api/questions/" + difficulty + "/" + i,
+      data: { "answered": false }
+    }).then(function () {
+      console.log("updated!");
+    });
+  }
 
   //New player is posted with name and difficulty, storing the new player's id in sessionStorage as well and reloading the page to display changes
   $.post("/api/player", {
@@ -342,12 +342,12 @@ function compare(a, b) {
 // $submitBtn.on("click", handleFormSubmit);
 
 
-// var queryURL = "https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple";
+var queryURL = "https://opentdb.com/api.php?amount=10&category=27&difficulty=hard&type=multiple";
 
 
-// $.ajax({
-//   url: queryURL,
-//   method: "GET"
-// }).then(function (response) {
-//   console.log(response);
-// });
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (response) {
+  console.log(response);
+});
