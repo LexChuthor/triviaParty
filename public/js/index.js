@@ -106,6 +106,18 @@ $(document).ready(function () {
   if (sessionStorage.getItem("ArtAnswered") == 8) {
     $(".Art").empty().append(`<br><h3>Completed</h3>`);
   };
+
+  if (sessionStorage.getItem("PlantsAnswered") == 8) {
+    $(".Plants").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if (sessionStorage.getItem("WeatherAnswered") == 8) {
+    $(".Weather").empty().append(`<br><h3>Completed</h3>`);
+  };
+
+  if (sessionStorage.getItem("FoodAnswered") == 8) {
+    $(".Food").empty().append(`<br><h3>Completed</h3>`);
+  };
 });
 
 // var difficulty;
@@ -150,6 +162,9 @@ $("#log-in").on("click", function () {
   sessionStorage.setItem("Video GamesAnswered", 0);
   sessionStorage.setItem("AnimalsAnswered", 0);
   sessionStorage.setItem("BooksAnswered", 0);
+  sessionStorage.setItem("PlantsAnswered", 0);
+  sessionStorage.setItem("WeatherAnswered", 0);
+  sessionStorage.setItem("FoodAnswered", 0);
 
   //New player is posted with name and difficulty, storing the new player's id in sessionStorage as well and reloading the page to display changes
   $.post("/api/player", {
