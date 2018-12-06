@@ -40,6 +40,58 @@ VALUES ("Which of these albums was not released by the Beatles?", "Abbey Road", 
 -- Animals: 6, Plants: 7, Weather: 8
 
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the largest animal on the planet?", "Whale Shark", "Elephant", "Blue Whale", "Giant Squid", "Blue Whale", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the largest of the great apes?", "Eastern Lowland Gorilla", "Orangutan", "Western Lowland Gorilla", "Mountain Gorilla", "Mountain Gorilla", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the world's most poisonous spider?", "Daddy Longlegs", "Banana Spider", "Black Widow", "Brown Recluse", "Banana Spider", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What animal has the highest blood pressure?", "Flea", "Giraffe", "Blue Whale", "Chihuahua", "Giraffe", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("How many living species of animal are estimated to exist?", "2.5 Million", "1 Billion", "1 Million", "3 Million", "3 Million", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What color is a polar bear's skin?", "White", "Black", "Pink", "Blue", "Black", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the only animal that cannot jump?", "Lobster", "Elephant", "Centipede", "Rhinoceros", "Elephant", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Gentoo, Humboldt, and Jackass are all varieties of what animal?", "Donkey", "Chicken", "Whale", "Penguin", "Penguin", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("A carnivorous animal eats flesh. What does a nucivorous animal eat?", "Nothing", "Seaweed", "Nuts", "Fruits", "Nuts", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these animals has fingerprints nearly indistinguishable from those of humans?", "Chimpanzee", "Koala", "Ring-tailed Lemur", "Baboon", "Koala", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Cashmere is the wool from which kind of animal?", "Sheep", "Llama", "Camel", "Goat", "Goat", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these species is not extinct?", "Komodo Dragon", "Saudi Gazelle", "Japanese Sea Lion", "Tasmanian Tiger", "Komodo Dragon", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What dog breed is one of the oldest breeds of dog and has flourished since before 400 BC?", "Bulldogs", "Pugs", "Chihuahuas", "Boxers", "Pugs", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("The Japanese dish Fugu is made from what kind of fish?", "Salmon", "Tuna", "Swordfish", "Pufferfish", "Pufferfish", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the fastest animal?", "Golden Eagle", "Horsefly", "Cheetah", "Peregrine Falcon", "Peregrine Falcon", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What type of animal is a natterjack?", "Toad", "Bird", "Fish", "Insect", "Toad", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which species of brown bear is not extinct?", "Syrian Brown Bear", "California Grizzly Bear", "Atlas Bear", "Mexican Grizzly Bear", "Syrian Brown Bear", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the only animal to survive exposure to outer space?", "Barnicle", "Tardigrade", "Cockroach", "Snail", "Tardigrade", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What type of creature is a Bonobo?", "Lion", "Ape", "Parrot", "Wildcat", "Ape", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What species is a 'mountain chicken'?", "Chicken", "Frog", "Horse", "Fly", "Frog", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("The order Coleoptera is the most biodiverse group of creatures known. What creatures are in it?", "Coral", "Butterflies", "Beetles", "Shrimp", "Beetles", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the strongest insect on the planet?", "Bull Ant", "Bumblebee", "Dung Beetle", "Hercules Beetle", "Dung Beetle", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What fish has been known to live the longest?", "Lungfish", "Tuna", "Swordfish", "Great White Shark", "Lungfish", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What animal has the largest eyes of any land animal (larger than their brains in fact)?", "Elephant", "Emu", "Hippopotamus", "Ostrich", "Ostrich", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+
+
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
 VALUES ("What flower was serenaded in the 1965 film The Sound of Music?", "Rose", "Lily", "Edelweiss", "Sunflower", "Edelweiss", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
 VALUES ("A plant's fruits are its ripened what?", "Ovaries", "Pistils", "Anthers", "Seeds", "Ovaries", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
@@ -81,42 +133,69 @@ INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4
 VALUES ("Which of these trees is considered a hardwood?", "Pine", "Cedar", "Maple", "Hickory", "Maple", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
 VALUES ("Which of these is not a legume?", "Peanut", "Carob", "Tamarind", "Vanilla", "Vanilla", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What percentage of pumpkins sold in the U.S. end up as jack-o-lanterns?", "50%", "65%", "80%", "99%", "99%", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Who is the poinsettia named after?", "A US ambassador to Mexico", "A Pennsylvania farmer", "A US Secretary of Agriculture", "A Christmas campaign manager", "A US ambassador to Mexico", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these flowering plants has the smallest seeds?", "Rose", "Orchid", "Hyacinth", "Strawberry", "Orchid", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the most widely cultivated crop in the world?", "Corn", "Oats", "Wheat", "Lettuce", "Wheat", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which of these plants is NOT poisonous when eaten?", "Kudzu", "Buttercups", "Sweet Pea", "Oleander", "Kudzu", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7);
 
 
 
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is the highest rainfall recorded in a day?", "50 inches", "60 inches", "73 inches", "85 inches", "73 inches", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("The highest temperatures in the U.S. have occurred where?", "Key West", "Texas", "Death Valley", "Hawaii", "Death Valley", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which state's record high temperature has not exceeded 100 degrees?", "Maine", "Montana", "Hawaii", "Minnesota", "Hawaii", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What type of cloud produces lightning?", "Stratus", "Cumulonimbus", "Nimbus", "Cirrus", "Cumulonimbus", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("Which weather event kills more people annually?", "Hurricanes", "Lightning", "Floods", "Tornadoes", "Floods", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("When is hurricane season in the Atlantic Ocean?", "June to November", "May to September", "July to October", "August to December", "June to November", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("What is a tornado that develops over water called?", "Waterdevil", "Watertube", "Waterspout", "Hydrotube", "Waterspout", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
+VALUES ("The Great Storm of 1900 affected what U.S. city?", "Pensacola", "Galveston", "New Orleans", "Mobile", "Galveston", "easy", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("A carnivorous animal eats flesh. What does a nucivorous animal eat?", "Nothing", "Seaweed", "Nuts", "Fruits", "Nuts", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What kind of cloud is highest in the atmosphere?", "Cirrus", "Altostratus", "Cumulus", "Cumulonimbus", "Cirrus", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What color is a polar bear's skin?", "White", "Black", "Pink", "Blue", "Black", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("The world's highest temperature (136 degrees Fahrenheit) was recorded in what country in 1922?", "Saudi Arabia", "Libya", "Indonesia", "Sudan", "Libya", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("Cashmere is the wool from which kind of animal?", "Sheep", "Llama", "Camel", "Goat", "Goat", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What U.S. state has the most tornadoes?", "Texas", "Oklahoma", "Missouri", "Kansas", "Texas", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("Which of these species is not extinct?", "Komodo Dragon", "Saudi Gazelle", "Japanese Sea Lion", "Tasmanian Tiger", "Komodo Dragon", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("At what wind speed does a tropical storm reach hurricane strength?", "53 MPH", "65 MPH", "74 MPH", "80 MPH", "74 MPH", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What dog breed is one of the oldest breeds of dog and has flourished since before 400 BC?", "Bulldogs", "Pugs", "Chihuahuas", "Boxers", "Pugs", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What U.S. state is not considered part of 'Tornado Alley'?", "Iowa", "Arizona", "Kansas", "Colorado", "Arizona", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("The Japanese dish Fugu is made from what kind of fish?", "Salmon", "Tuna", "Swordfish", "Pufferfish", "Pufferfish", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What place holds the world record for highest surface wind speed?", "Australia", "New Hampshire", "Russia", "Nepal", "Australia", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What is the fastest animal?", "Golden Eagle", "Horsefly", "Cheetah", "Peregrine Falcon", "Peregrine Falcon", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("Which of the following conditions would cause the National Weather Service to issue a Winter Weather Advisory?", "Snow and blowing snow", "Sleet", "Freezing Rain", "Any of these", "Any of these", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What type of animal is a natterjack?", "Toad", "Bird", "Fish", "Insect", "Toad", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What hurricane was the costliest storm (monetarily) of the last century?", "Andrew", "Katrina", "Rita", "Opal", "Katrina", "medium", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
+
 
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("Which species of brown bear is not extinct?", "Syrian Brown Bear", "California Grizzly Bear", "Atlas Bear", "Mexican Grizzly Bear", "Syrian Brown Bear", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("The Fujita scale measures the strength of what?", "Hurricanes", "Tornadoes", "Floods", "Meteorite Strikes", "Tornadoes", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What is the only animal to survive exposure to outer space?", "Barnicle", "Tardigrade", "Cockroach", "Snail", "Tardigrade", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What hurricane name has been used most frequently (at least eleven times)?", "Sandy", "Justine", "Arlene", "Rosa", "Arlene", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What type of creature is a Bonobo?", "Lion", "Ape", "Parrot", "Wildcat", "Ape", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("Hurricane names were once all female. When were male names added to the mix?", "1950", "1978", "1985", "1963", "1978", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What species is a 'mountain chicken'?", "Chicken", "Frog", "Horse", "Fly", "Frog", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("The deadliest tornado in U.S. history killed how many people in 1925?", "302", "695", "1022", "830", "695", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("The order Coleoptera is the most biodiverse group of creatures known. What creatures are in it?", "Coral", "Butterflies", "Beetles", "Shrimp", "Beetles", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What rare weather occurrence happened in 2004?", "A tornado went up a cliff", "A hurricane made landfall in Brazil", "Water rained upwards", "A blizzard struck the Middle East", "A hurricane made landfall in Brazil", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What is the strongest insect on the planet?", "Bull Ant", "Bumblebee", "Dung Beetle", "Hercules Beetle", "Dung Beetle", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What area boasts the highest number of annual lightning strikes?", "Texas, U.S.A.", "The Congo", "Queensland, Australia", "The Andes Mountains", "The Congo", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What fish has been known to live the longest?", "Lungfish", "Tuna", "Swordfish", "Great White Shark", "Lungfish", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What is the name of the scale for measuring hurricane severity?", "Saffir-Simpson", "Beaufort", "Johannson", "Billings", "Saffir-Simpson", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 INSERT INTO tqps27hovjvizqxp.Questions (text, answer1, answer2, answer3, answer4, correctAnswer, difficulty, createdAt, updatedAt, CategoryId)
-VALUES ("What animal has the largest eyes of any land animal (larger than their brains in fact)?", "Elephant", "Emu", "Hippopotamus", "Ostrich", "Ostrich", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6);
+VALUES ("What year was the first tornado accurately predicted before it struck? ", "1948", "1936", "1955", "1963", "1948", "hard", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8);
 
 
